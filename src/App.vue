@@ -1,20 +1,20 @@
-<script setup></script>
-
 <template>
-    <RouterView />
+    <v-app>
+        <v-main>
+            <router-view />
+        </v-main>
+    </v-app>
 </template>
 
-<style lang="scss">
-@import './styles/_variables.scss';
-body {
-    display: flex;
-    flex-grow: 1;
-}
-.main-color-1 {
-    color: $base-color;
-}
+<script>
+export default {
+    name: 'App',
 
-.main-bg-1 {
-    background-color: $base-color;
-}
+    data: () => ({
+        //
+    }),
+};
+</script>
+<style>
+@import './styles/main.css';
 </style>

@@ -1,5 +1,5 @@
 <script>
-import BurgerIcon from '../../../components/icons/BurgerIcon.vue'
+import BurgerIcon from '../../../components/icons/BurgerIcon.vue';
 export default {
     name: 'TheMenu',
     components: { BurgerIcon },
@@ -7,44 +7,48 @@ export default {
 </script>
 
 <template>
-    <div class="po-1">
-        <div class="po-img-wrap d-flex-col main-bg-1">
-            <div>
-                <div class="po-menu" @click="$emit('set-is-header-visible')">
-                    <BurgerIcon />
-                </div>
+    <div class="po-1 mr-10">
+        <div class="po-img-wrap main-bg-grey">
+            <div class="po-menu" @click="$emit('set-is-header-visible')">
+                <BurgerIcon />
+            </div>
+            <div class="w">
                 <img
                     class="po-img"
                     src="../../../assets/photo.png"
                     alt="my_photo"
                 />
-                <div class="po-my-name d-flex-col">
-                    <div>Olha</div>
-                    <div>Kharytonova</div>
-                </div>
+            </div>
+            <div class="po-my-name">
+                <div>Olha</div>
+                <div>Kharytonova</div>
             </div>
         </div>
     </div>
 </template>
 
 <style lang="scss" scoped>
+@import '../../../styles/_variables.scss';
+.w {
+    margin: 50px 0 42px 0;
+    width: 199px;
+}
 .po {
     &-1 {
-        margin-right: 42px;
-        width: calc(22vw - 21px);
         z-index: 1;
     }
 
     &-img {
-        margin: 56px 0;
-        width: 198px;
+        height: 199px;
         object-fit: contain;
     }
 
     &-img-wrap {
+        border-top: 1px solid transparent;
+        border-bottom: 1px solid transparent;
+        box-sizing: border-box;
         margin: 42px 0 0 0;
-        width: 100%;
-        height: 573px;
+        padding-left: 164px;
         align-items: end;
     }
 
@@ -53,17 +57,19 @@ export default {
     }
 
     &-my-name {
+        font-family: Cinzel-Regular, serif;
         color: var(--color-text-lite);
         font-size: 30px;
+        padding-bottom: 70px;
 
         & div:first-child {
-            margin-bottom: 15px;
+            line-height: 30.27px;
         }
 
         & div:nth-child(2) {
             font-size: 20px;
+            line-height: 20.18px;
         }
     }
-
 }
 </style>
