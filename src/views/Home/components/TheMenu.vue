@@ -1,17 +1,12 @@
 <script>
-import BurgerIcon from '../../../components/icons/BurgerIcon.vue';
 export default {
     name: 'TheMenu',
-    components: { BurgerIcon },
 };
 </script>
 
 <template>
-    <div class="po-1 mr-10">
+    <div class="po-1 d-flex mr-10">
         <div class="po-img-wrap main-bg-grey">
-            <div class="po-menu" @click="$emit('set-is-header-visible')">
-                <BurgerIcon />
-            </div>
             <div class="w">
                 <img
                     class="po-img"
@@ -30,7 +25,7 @@ export default {
 <style lang="scss" scoped>
 @import '../../../styles/_variables.scss';
 .w {
-    margin: 50px 0 42px 0;
+    margin: 200px 0 42px 0;
     width: 199px;
 }
 .po {

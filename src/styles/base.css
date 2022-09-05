@@ -78,3 +78,7 @@ h1, h2 {
 .opacity-0 {
   opacity: 0;
 }
+
+ul {
+  list-style: none;
+}

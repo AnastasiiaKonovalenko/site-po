@@ -75,7 +75,7 @@ export default {
     &-menu-img {
         opacity: 0.6;
         position: relative;
-        right: -160px;
+        right: -202px;
         width: 450px;
         object-fit: contain;
         transition: all 0.3s ease-out;

@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import HomeView from '../views/Home/HomeView.vue';
-import TheMenuWithPoint from '../views/Home/components/TheMenuWithPoint.vue';
+import TheMenuWithPoint from '../views/Home/AboutMe.vue';
 import ThePizzaGhost from '../views/Home/components/ThePizzaGhost.vue';
 
 const router = createRouter({
@@ -23,6 +23,16 @@ const router = createRouter({
                 {
                     name: 'cadabra',
                     path: 'cadabra',
+                    component: ThePizzaGhost,
+                },
+                {
+                    name: 'cv',
+                    path: 'cv',
+                    component: ThePizzaGhost,
+                },
+                {
+                    name: 'contacts',
+                    path: 'contacts',
                     component: ThePizzaGhost,
                 },
             ],

@@ -18,6 +18,14 @@ export default {
             poMenuImgWrapTextVisible: false,
         };
     },
+    mounted() {
+        console.log(window);
+    },
+    computed: {
+        hightA(){
+            return window.screen.height / 2;
+        }
+    },
     watch: {
         '$route.path': {
             handler: function (path) {
@@ -55,7 +63,7 @@ export default {
 
 <template>
     <div class="po-main">
-        <div class="d-flex flex-grow-1 overflow-x-hidden">
+        <div class="po-head d-flex w-100 overflow-hidden">
             <TheMenu @set-is-header-visible="setIsHeaderVisible" />
 
             <div class="po-2 d-flex flex-grow-1">
@@ -127,13 +135,13 @@ export default {
                             img-src="kadabra_broshur_22.jpg"
                         />
                     </router-link>
-<!--                    <MenuImgItem-->
-<!--                        v-if="$route.path === '/'"-->
-<!--                        :is-active="false"-->
-<!--                        class="mt-1"-->
-<!--                        key="3"-->
-<!--                        img-src="pizza_broshur.jpg"-->
-<!--                    />-->
+                    <MenuImgItem
+                        v-if="$route.path === '/'"
+                        :is-active="false"
+                        class="mt-1"
+                        key="3"
+                        img-src="pizza_broshur.jpg"
+                    />
                 </div>
             </div>
         </div>
@@ -146,6 +154,18 @@ export default {
 
 <style lang="scss" scoped>
 .po {
+    &-main {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        overflow-x: hidden;
+    }
+
+    &-head {
+        height: 50vh;
+        min-height: 600px !important;
+    }
+
     &-header {
         background-color: var(--vt-c-black);
         margin-right: 284px;
@@ -242,12 +262,8 @@ export default {
 }
 
 .wrap {
-    left: 76%;
+    right: 0;
     transition: all 0.3s ease-out;
-
-    &-active {
-        left: 403px;
-        transition: all 0.3s ease-out;
-    }
+    z-index: 1000;
 }
 </style>

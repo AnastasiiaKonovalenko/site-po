@@ -1,11 +1,14 @@
 <template>
-    <div class="po-footer d-flex justify-center align-center">
-        <div class="po-footer-text flex-grow-1 d-flex flex-column justify-center align-center">
-            <div>Project was completed in 2022</div>
-            <div>you for watching</div>
-            <div>please contact me</div>
-        </div>
-    </div>
+    <v-footer padless>
+        <v-col class="text-center" cols="12">
+            <v-col class="mt-4">
+                {{ new Date().getFullYear() }} —
+                <strong>Olga Kharytonova</strong>
+            </v-col>
+
+            <slot></slot>
+        </v-col>
+    </v-footer>
 </template>
 
 <script>
@@ -16,6 +19,29 @@ export default {
 
 <style lang="scss" scoped>
 @import '../../../styles/_variables.scss';
+.v-footer::v-deep {
+    position: relative;
+    &:before {
+        content: '';
+        position: absolute;
+        top: 1px;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background-color: var(--vt-c-grey-1);
+        z-index: 1000;
+    }
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 1px;
+        background-color: var(--vt-c-grey-1);
+        left: 403px;
+        z-index: 1000;
+    }
+}
 
 .po-footer {
     border-top: 1px solid #5e5e5e;
