@@ -21,8 +21,8 @@
                 'po-menu-img-active': isActive,
             }"
             @click="isBig = true"
-            :src="`${imageUrl}${imgSrc}`"
-            alt="pizza_broshur"
+            :src="imageSrc"
+            :alt="imgSrc"
         />
     </div>
 </template>
@@ -40,15 +40,17 @@ export default {
             required: true,
         },
     },
-    setup() {
-        const imageUrl = new URL('/src/assets/', import.meta.url).href;
-        return { imageUrl };
-    },
     data() {
         return {
             isBig: false,
             isHover: false,
         };
+    },
+    computed: {
+        imageSrc() {
+            return new URL(`../../../assets/${this.imgSrc}`, import.meta.url)
+                .href;
+        },
     },
 };
 </script>
