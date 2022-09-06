@@ -41,7 +41,7 @@ export default {
         },
     },
     setup() {
-        const imageUrl = new URL('../../../assets/', import.meta.url).href;
+        const imageUrl = new URL('/src/assets/', import.meta.url).href;
         return { imageUrl };
     },
     data() {
