@@ -7,16 +7,16 @@
         >
             <ul
                 @mouseleave="setMarkerTop(null)"
-                class="po-list position-relative py-3 my-2"
+                class="po-list position-relative"
             >
                 <li
-                    :style="{ top: `${markerTop}px` }"
+                    :style="{ top: `${markerTop}%` }"
                     class="po-menu-marker position-absolute"
                 ></li>
                 <li
                     v-for="(item, idx) in menuItems"
                     :key="idx"
-                    class="po-list-item d-flex justify-end py-7"
+                    class="po-list-item d-flex justify-end"
                     :class="{
                         'po-list-item-active': item.path === $route.path,
                     }"
@@ -46,7 +46,7 @@ export default {
         return {
             markerVerticalPosition: 0,
             isMenuFixed: false,
-            markerTop: 45,
+            markerTop: 18,
         };
     },
     mounted() {
@@ -73,25 +73,25 @@ export default {
                 if (idx === null) {
                     switch (this.$route.path) {
                         case '/':
-                            this.markerTop = 45;
+                            this.markerTop = 18;
                             break;
                         case '/cv':
-                            this.markerTop = 115;
+                            this.markerTop = 48;
                             break;
                         case '/contacts':
-                            this.markerTop = 187;
+                            this.markerTop = 78;
                             break;
                     }
                 } else {
                     switch (idx) {
                         case 0:
-                            this.markerTop = 45;
+                            this.markerTop = 18;
                             break;
                         case 1:
-                            this.markerTop = 115;
+                            this.markerTop = 48;
                             break;
                         case 2:
-                            this.markerTop = 187;
+                            this.markerTop = 78;
                             break;
                     }
                 }
@@ -102,25 +102,30 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '../../../styles/functions.scss';
+@import '../../../styles/vars.scss';
 .position-fixed {
     position: fixed;
     top: 0;
-    left: 195px;
+    left: min(get-vw(195px), 195px);
 }
 .po {
     &-menu-marker {
-        right: -59px;
-        height: 9px;
-        width: 9px;
+        left: 132%;
+        height: min(get-vw(9px), 9px);
+        width: min(get-vw(9px), 9px);
         border-radius: 50%;
         background-color: var(--vt-c-grey-1);
         transition: all 0.3s ease-out;
     }
 
     &-list {
+        padding: min(get-vw(12px), 12px) 0 min(get-vw(12px), 12px) 0;
+        margin: min(get-vw(8px), 8px) 0 min(get-vw(8px), 8px) 0;
         height: max-content;
         &-item {
             cursor: pointer;
+            padding: min(get-vw(28px), 28px) 0 min(get-vw(28px), 28px) 0;
 
             &:hover {
                 color: black;
@@ -133,7 +138,10 @@ export default {
     }
 }
 li {
-    font-size: 20px;
+    font-size: min(
+        get-vw($secondary-text-font-size),
+        $secondary-text-font-size
+    );
     color: var(--vt-c-grey-1);
 }
 </style>

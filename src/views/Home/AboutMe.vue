@@ -10,11 +10,9 @@
         </div>
 
         <div class="po-about-me flex-grow-1">
-            <p class="mb-11">Hello, thank you for visiting this page!</p>
+            <p class="po-about-me-bold mb-custom-11">My name is Olga,</p>
 
-            <p class="po-about-me-bold mb-11">My name is Olga,</p>
-
-            <p class="mb-11">
+            <p class="mb-custom-11">
                 I’m from Kyiv, Ukraine, however currently am located in Vilnius,
                 Lithuania. After achieving all set goals in graphic design, I’m
                 now growing further into the digital world by reinventing myself
@@ -28,27 +26,29 @@
                 clients from over 10 countries around the World.
             </p>
 
-            <p class="po-about-me-bold mb-11">I’m happy to bring to the table:</p>
+            <p class="po-about-me-bold mb-custom-11">
+                I’m happy to bring to the table:
+            </p>
 
-            <p class="mb-11">
+            <p class="mb-custom-11">
                 - Mastery in challenges of a commercial business, due to my
                 background as a small business owner;
             </p>
-            <p class="mb-11">
+            <p class="mb-custom-11">
                 - Ability to understand & solve marketing challenges due to
                 close contact with marketing managers In the line of duty;
             </p>
-            <p class="mb-11">
+            <p class="mb-custom-11">
                 - Virtuosity in balancing client’s emotions due to the interest
                 & research of psychology & sociology;
             </p>
-            <p class="mb-11">
+            <p class="mb-custom-11">
                 It would be my pleasure to exploring depth of UI/UX Design, add
                 to your company team a perfect balance of experience,
                 progressive consciousness and passion when growing to be a
                 valuable part of the company’s development!
             </p>
-            <p class="mb-11">
+            <p class="mb-custom-11">
                 As the next career step I look forward to develop new skills in
                 the field including animation, 3D graphics and Augmented Reality
                 to elevate the range of services provided and cover larger share
@@ -70,35 +70,35 @@ setTimeout(() => {
 </script>
 
 <style lang="scss" scoped>
-@import '../../styles/variables';
-
+@import '../../styles/functions.scss';
+@import '../../styles/vars.scss';
 .po {
     &-header-2 {
         font-family: 'Cinzel-Regular', serif;
         font-style: normal;
-        font-size: 70px;
+        font-size: min(get-vw($main-h2-font-size), $main-h2-font-size);
         color: var(--vt-c-grey-1);
-        padding-bottom: 47px;
+        padding-bottom: min(get-vw(47px), 47px);
         background-color: white;
         z-index: 1;
         position: relative;
-        right: 234px;
-        margin-right: -234px;
+        right: min(get-vw(234px), 234px);
+        margin-right: min(get-vw(-234px), -234px);
         white-space: nowrap;
     }
 
     &-my-projects-list {
-        margin-top: 253px;
-        width: 540px;
-        margin-left: 40px;
+        margin-top: min(get-vw(253px), 253px);
+        width: min(get-vw(540px), 540px);
+        margin-left: min(get-vw(40px), 40px);
 
         &-item {
             font-family: 'Cinzel-Regular', serif;
             font-style: normal;
             font-weight: 400;
-            font-size: 40px;
+            font-size: min(get-vw($forth-party-text-font-size), $forth-party-text-font-size);
             line-height: 100.9%;
-            margin-top: 60px;
+            margin-top: min(get-vw(60px), 60px);
             list-style: none;
             color: var(--vt-c-grey-1);
 
@@ -114,12 +114,12 @@ setTimeout(() => {
 
     &-about-me {
         font-family: 'Cinzel-Regular', serif;
-        font-size: 20px;
+        font-size: min(get-vw($secondary-text-font-size), $secondary-text-font-size);
         line-height: 150%;
         color: var(--vt-c-grey-1);
 
         &-bold {
-            font-size: 40px;
+            font-size: min(get-vw($forth-party-text-font-size), $forth-party-text-font-size);
         }
     }
 }
@@ -134,14 +134,14 @@ setTimeout(() => {
 
 .slide-fade-enter-from,
 .slide-fade-leave-to {
-    transform: translateX(-284px);
+    transform: translateX(min(get-vw(-284px), -284px));
     opacity: 0;
 }
 
 .hide-line {
-    min-width: 902px;
-    height: 116px;
+    min-width: min(get-vw(902px), 902px);
+    height: min(get-vw(116px), 116px);
     position: relative;
-    left: -50px;
+    left: min(get-vw(-50px), -50px);
 }
 </style>

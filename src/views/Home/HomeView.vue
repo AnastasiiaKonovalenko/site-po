@@ -22,9 +22,9 @@ export default {
         console.log(window);
     },
     computed: {
-        hightA(){
+        hightA() {
             return window.screen.height / 2;
-        }
+        },
     },
     watch: {
         '$route.path': {
@@ -101,7 +101,7 @@ export default {
                                     $route.path === '/pizza-ghost'
                                 "
                                 :is-active="$route.path === '/pizza-ghost'"
-                                class="mt-11"
+                                class="mt-custom-11"
                                 :class="{
                                     'opacity-0':
                                         $route.path !== '/pizza-ghost' &&
@@ -128,8 +128,8 @@ export default {
                             "
                             :is-active="$route.path === '/cadabra'"
                             :class="{
-                                'mt-1': $route.path === '/',
-                                'mt-11': $route.path === '/cadabra',
+                                'mt-custom-1': $route.path === '/',
+                                'mt-custom-11': $route.path === '/cadabra',
                             }"
                             key="2"
                             img-src="kadabra_broshur_22.jpg"
@@ -138,7 +138,7 @@ export default {
                     <MenuImgItem
                         v-if="$route.path === '/'"
                         :is-active="false"
-                        class="mt-1"
+                        class="mt-custom-1"
                         key="3"
                         img-src="pizza_broshur.jpg"
                     />
@@ -153,6 +153,8 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+@import '@/styles/vars.scss';
+@import '@/styles/functions.scss';
 .po {
     &-main {
         display: flex;
@@ -163,57 +165,70 @@ export default {
 
     &-head {
         height: 50vh;
-        min-height: 600px !important;
+        max-height: min(get-vw(800px), 800px);
+        min-height: min(get-vw(615px), 615px);
     }
 
     &-header {
         background-color: var(--vt-c-black);
-        margin-right: 284px;
+        margin-right: min(get-vw(284px), 284px);
 
         &-full-size {
             margin-right: 0;
-            height: calc(100vw / 1.33 - 214px);
+            height: calc(100vw / 1.33 - min(get-vw(214px), 214px));
         }
 
         & h1 {
             font-family: RedHatDisplay-Bold, sans-serif;
-            max-width: 600px;
-            font-size: 117px;
+            max-width: min(get-vw(600px), 600px);
+            font-size: min(get-vw($head-h1-font-size), $head-h1-font-size);
             color: var(--vt-c-grey-1);
-            margin-top: 225px;
+            margin-top: min(get-vw(225px), 225px);
             position: relative;
-            right: 50px;
+            right: min(get-vw(50px), 50px);
         }
 
         &__subtext {
             font-family: RedHatDisplay-Light, serif;
-            font-size: 20px;
-            width: 110px;
-            margin-top: 265px;
+            font-size: min(
+                get-vw($secondary-text-font-size),
+                $secondary-text-font-size
+            );
+            width: min(get-vw(110px), 110px);
+            margin-top: min(get-vw(265px), 265px);
             line-height: 100.9%;
         }
     }
 
     &-subtext {
         font-family: RedHatDisplay-Light, serif;
-        font-size: 20px;
-        width: 110px;
+        font-size: min(
+            get-vw($secondary-h2-font-size),
+            $secondary-h2-font-size
+        );
+        width: min(get-vw(110px), 110px);
         line-height: 100.9%;
         color: var(--vt-c-grey-1);
-        margin-top: 160px;
+        margin-top: min(get-vw(160px), 160px);
         position: relative;
-        right: 60px;
+        right: min(get-vw(60px), 60px);
     }
 
     &-menu-img-wrap {
         &-header {
-            font-size: 28px;
+            font-size: min(
+                get-vw($secondary-h2-font-size),
+                $secondary-h2-font-size
+            );
             line-height: 100.17%;
-            margin-bottom: 40px;
+            margin-bottom: min(get-vw(40px), 40px);
         }
 
         &-p {
-            font-size: 18px;
+            font-size: min(
+                get-vw($fifth-party-text-font-size),
+                $fifth-party-text-font-size
+            );
             text-transform: none;
         }
     }
@@ -242,7 +257,7 @@ export default {
 
 .slide-fade-enter-from,
 .slide-fade-leave-to {
-    transform: translateX(20px);
+    transform: translateX(min(get-vw(-20px), -20px));
     opacity: 0;
 }
 
@@ -258,7 +273,7 @@ export default {
 .slide-top-enter-from,
 .slide-top-leave-to {
     opacity: 0 !important;
-    margin-bottom: -460px;
+    margin-bottom: min(get-vw(-460px), -450px);
 }
 
 .wrap {

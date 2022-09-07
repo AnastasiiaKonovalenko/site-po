@@ -56,6 +56,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '../../../styles/functions.scss';
+@import '../../../styles/vars.scss';
+
 .po {
     &-menu-img-wrap {
         cursor: default;
@@ -65,20 +68,20 @@ export default {
         &-text {
             font-family: RedHatDisplay-Regular, sans-serif;
             color: white;
-            width: 130px;
-            margin-right: 20px;
-            padding-right: 20px;
+            width: min(get-vw(130px), 130px);
+            margin-right: min(get-vw(20px), 20px);
+            padding-right: min(get-vw(20px), 20px);
             transition: all 0.6ms;
             z-index: 1;
-            left: -130px;
+            left: -30%;
         }
     }
 
     &-menu-img {
         opacity: 0.6;
         position: relative;
-        right: -202px;
-        width: 450px;
+        right: -46%;
+        width: min(get-vw(450px), 450px);
         object-fit: contain;
         transition: all 0.3s ease-out;
 
@@ -90,19 +93,22 @@ export default {
         &-active {
             opacity: 1;
             right: 0;
-            width: calc(100vw - 403px);
+            width: calc(100vw - min(get-vw(403px), 403px));
         }
     }
 
     &-subtext {
         font-family: RedHatDisplay-Light, serif;
-        font-size: 20px;
-        width: 110px;
+        font-size: min(
+            get-vw($secondary-text-font-size),
+            $secondary-text-font-size
+        );
+        width: min(get-vw(110px), 110px);
         line-height: 100.9%;
         color: var(--vt-c-grey-1);
-        margin-top: 160px;
+        margin-top: min(get-vw(160px), 160px);
         position: relative;
-        right: 60px;
+        right: min(get-vw(60px), 60px);
     }
 }
 
@@ -116,7 +122,7 @@ export default {
 
 .po-img-wrap-text-enter-from,
 .po-img-wrap-text-leave-to {
-    transform: translateX(20px);
+    transform: translateX(min(get-vw(20px), 20px));
     opacity: 0;
 }
 </style>
