@@ -241,7 +241,7 @@ export default {
                 $secondary-h2-font-size
             );
             line-height: 100.17%;
-            margin-bottom: min(get-vw(40px), 40px);
+            margin-bottom: min(get-vw(35px), 35px);
         }
 
         &-p {

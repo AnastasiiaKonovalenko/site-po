@@ -68,7 +68,7 @@ export default {
         &-text {
             font-family: RedHatDisplay-Regular, sans-serif;
             color: var(--vt-c-grey-1);
-            width: min(get-vw(130px), 130px);
+            width: min(get-vw(140px), 140px);
             margin-right: min(get-vw(20px), 20px);
             padding-right: min(get-vw(20px), 20px);
             transition: all 0.6ms;
