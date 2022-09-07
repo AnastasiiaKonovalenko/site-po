@@ -72,7 +72,7 @@ export default {
                     class="po-header flex-grow-1"
                 >
                     <Transition name="slide">
-                        <div class="d-flex" v-if="isHeaderVisible">
+                        <div class="d-flex position-relative" v-if="isHeaderVisible">
                             <h1 class="header">PRODUCT DESIGNER</h1>
                             <Transition name="slide-fade">
                                 <div
@@ -212,8 +212,8 @@ export default {
         }
 
         &__subtext {
-            right: 68.5%;
-            top: -11%;
+            left: 4%;
+            top: -50%;
             font-family: RedHatDisplay-Light, serif;
             font-size: min(get-vw(45px), 45px);
             width: min(get-vw(110px), 110px);
