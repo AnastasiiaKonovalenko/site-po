@@ -26,6 +26,11 @@ const router = createRouter({
                     component: ThePizzaGhost,
                 },
                 {
+                    name: 'logos',
+                    path: 'logos',
+                    component: ThePizzaGhost,
+                },
+                {
                     name: 'cv',
                     path: 'cv',
                     component: ThePizzaGhost,

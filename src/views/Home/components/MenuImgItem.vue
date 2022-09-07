@@ -67,18 +67,17 @@ export default {
 
         &-text {
             font-family: RedHatDisplay-Regular, sans-serif;
-            color: white;
+            color: var(--vt-c-grey-1);
             width: min(get-vw(130px), 130px);
             margin-right: min(get-vw(20px), 20px);
             padding-right: min(get-vw(20px), 20px);
             transition: all 0.6ms;
             z-index: 1;
-            left: -30%;
+            left: -15%;
         }
     }
 
     &-menu-img {
-        opacity: 0.6;
         position: relative;
         right: -46%;
         width: min(get-vw(450px), 450px);
@@ -86,8 +85,7 @@ export default {
         transition: all 0.3s ease-out;
 
         &-hover {
-            opacity: 1;
-            right: 0;
+            right: -16%;
         }
 
         &-active {

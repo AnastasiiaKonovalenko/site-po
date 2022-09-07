@@ -77,9 +77,11 @@ export default {
                             <Transition name="slide-fade">
                                 <div
                                     v-if="isHeaderSubtextVisible"
-                                    class="po-header__subtext text-white"
+                                    class="po-header__subtext position-absolute text-white"
                                 >
-                                    Identity, Editorial, Graphic
+                                    <div>
+                                        UI/UX, Identity, Editorial, Graphic,
+                                    </div>
                                     <div class="po-subtext">
                                         based in Vilnius, Lithuania
                                     </div>
@@ -133,15 +135,36 @@ export default {
                             }"
                             key="2"
                             img-src="kadabra_broshur_22.jpg"
-                        />
+                        >
+                            <div class="po-menu-img-wrap-header">
+                                Kadabra project
+                            </div>
+                            <div class="po-menu-img-wrap-p">
+                                Marketing Agency Website Concept
+                                + Brand Identity
+                                & Logo Book
+                            </div>
+                        </MenuImgItem>
                     </router-link>
-                    <MenuImgItem
-                        v-if="$route.path === '/'"
-                        :is-active="false"
-                        class="mt-custom-1"
-                        key="3"
-                        img-src="pizza_broshur.jpg"
-                    />
+                    <router-link to="/logos">
+                        <MenuImgItem
+                            v-if="
+                                $route.path === '/' ||
+                                $route.path === '/logos'
+                            "
+                            :is-active="$route.path === '/logos'"
+                            :class="{
+                                'mt-custom-1': $route.path === '/',
+                                'mt-custom-11': $route.path === '/logos',
+                            }"
+                            key="2"
+                            img-src="jaro_2.png"
+                        >
+                            <div class="po-menu-img-wrap-header">
+                                Logos, Identity, mltipage layout samples
+                            </div>
+                        </MenuImgItem>
+                    </router-link>
                 </div>
             </div>
         </div>
@@ -189,11 +212,10 @@ export default {
         }
 
         &__subtext {
+            right: 68.5%;
+            top: -11%;
             font-family: RedHatDisplay-Light, serif;
-            font-size: min(
-                get-vw($secondary-text-font-size),
-                $secondary-text-font-size
-            );
+            font-size: min(get-vw(45px), 45px);
             width: min(get-vw(110px), 110px);
             margin-top: min(get-vw(265px), 265px);
             line-height: 100.9%;
@@ -209,9 +231,7 @@ export default {
         width: min(get-vw(110px), 110px);
         line-height: 100.9%;
         color: var(--vt-c-grey-1);
-        margin-top: min(get-vw(160px), 160px);
-        position: relative;
-        right: min(get-vw(60px), 60px);
+        margin-top: min(get-vw(270px), 270px);
     }
 
     &-menu-img-wrap {

@@ -9,10 +9,14 @@
                 @mouseleave="setMarkerTop(null)"
                 class="po-list position-relative"
             >
-                <li
-                    :style="{ top: `${markerTop}%` }"
-                    class="po-menu-marker position-absolute"
-                ></li>
+                <Transition name="fade">
+                    <li
+                        v-if="markerTop > 0"
+                        :style="{ top: `${markerTop}%` }"
+                        class="po-menu-marker position-absolute"
+                    ></li>
+                </Transition>
+
                 <li
                     v-for="(item, idx) in menuItems"
                     :key="idx"
@@ -46,10 +50,14 @@ export default {
         return {
             markerVerticalPosition: 0,
             isMenuFixed: false,
-            markerTop: 18,
+            markerTop: 0,
         };
     },
     mounted() {
+        setTimeout(() => {
+            this.markerTop = 18;
+        }, 50);
+
         window.addEventListener('scroll', this.setIsMenuFixed);
     },
     beforeUnmount() {
@@ -143,5 +151,15 @@ li {
         $secondary-text-font-size
     );
     color: var(--vt-c-grey-1);
+}
+
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+    opacity: 0;
 }
 </style>

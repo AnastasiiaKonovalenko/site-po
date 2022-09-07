@@ -1,7 +1,6 @@
 <template>
     <div class="position-relative flex-grow-1 d-flex flex-column">
         <div class="hide-line">
-            <div class="bg-white position-absolute h-100 w-25"></div>
             <Transition name="slide-fade">
                 <h2 v-if="isHeaderOnPortfolioDownloaded" class="po-header-2">
                     Welcome to my portfolio
@@ -80,10 +79,7 @@ setTimeout(() => {
         color: var(--vt-c-grey-1);
         padding-bottom: min(get-vw(47px), 47px);
         background-color: white;
-        z-index: 1;
-        position: relative;
-        right: min(get-vw(234px), 234px);
-        margin-right: min(get-vw(-234px), -234px);
+        z-index: 10;
         white-space: nowrap;
     }
 
@@ -139,9 +135,11 @@ setTimeout(() => {
 }
 
 .hide-line {
-    min-width: min(get-vw(902px), 902px);
+    background-color: white;
+    min-width: min(get-vw(802px), 802px);
     height: min(get-vw(116px), 116px);
     position: relative;
-    left: min(get-vw(-50px), -50px);
+    right: min(get-vw(284px), 284px);
+    margin-right: min(get-vw(-284px), -284px);
 }
 </style>
