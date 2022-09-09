@@ -1,5 +1,6 @@
 <template>
-    <div ref="sticky-container" class="position-relative d-flex flex-grow-1">
+    <div
+        ref="sticky-container" class="position-relative d-flex flex-grow-1">
         <div
             ref="sticky-content"
             class="d-flex flex-grow-1 justify-end"
@@ -11,7 +12,7 @@
             >
                 <Transition name="fade">
                     <li
-                        v-if="markerTop > 0"
+                        v-if="markerTop > -42"
                         :style="{ top: `${markerTop}%` }"
                         class="po-menu-marker position-absolute"
                     ></li>
@@ -50,14 +51,24 @@ export default {
         return {
             markerVerticalPosition: 0,
             isMenuFixed: false,
-            markerTop: 0,
+            markerTop: -100,
         };
+    },
+    watch: {
+        '$route.path': {
+            handler: function() {
+                setTimeout(() => {
+                    this.setMarkerTop(null)
+                });
+            },
+            deep: true,
+            immediate: true,
+        }
     },
     mounted() {
         setTimeout(() => {
-            this.markerTop = 18;
+            this.setMarkerTop(null)
         }, 50);
-
         window.addEventListener('scroll', this.setIsMenuFixed);
     },
     beforeUnmount() {
@@ -88,6 +99,10 @@ export default {
                             break;
                         case '/contacts':
                             this.markerTop = 78;
+                            break;
+
+                        case '/pizza-ghost':
+                            this.markerTop = -39;
                             break;
                     }
                 } else {

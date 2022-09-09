@@ -58,7 +58,16 @@ body {
   flex-grow: 1;
 }
 
-h1, h2 {
+a {
+  font-style: italic;
+  color: var(--vt-c-grey-1);
+}
+
+a:hover {
+  color: black;
+}
+
+h1, h2, h3, h4 {
   line-height: 100.9%;
   margin: 0;
   height: auto;

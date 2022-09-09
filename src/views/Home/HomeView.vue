@@ -63,7 +63,10 @@ export default {
 
 <template>
     <div class="po-main">
-        <div class="po-head d-flex w-100 overflow-hidden">
+        <div
+            :class="{ 'po-head-full-size': !isHeaderVisible }"
+            class="po-head d-flex w-100 overflow-hidden"
+        >
             <TheMenu @set-is-header-visible="setIsHeaderVisible" />
 
             <div class="po-2 d-flex flex-grow-1">
@@ -72,7 +75,10 @@ export default {
                     class="po-header flex-grow-1"
                 >
                     <Transition name="slide">
-                        <div class="d-flex position-relative" v-if="isHeaderVisible">
+                        <div
+                            class="d-flex position-relative"
+                            v-if="isHeaderVisible"
+                        >
                             <h1 class="header">PRODUCT DESIGNER</h1>
                             <Transition name="slide-fade">
                                 <div
@@ -140,17 +146,15 @@ export default {
                                 Kadabra project
                             </div>
                             <div class="po-menu-img-wrap-p">
-                                Marketing Agency Website Concept
-                                + Brand Identity
-                                & Logo Book
+                                Marketing Agency Website Concept + Brand
+                                Identity & Logo Book
                             </div>
                         </MenuImgItem>
                     </router-link>
                     <router-link to="/logos">
                         <MenuImgItem
                             v-if="
-                                $route.path === '/' ||
-                                $route.path === '/logos'
+                                $route.path === '/' || $route.path === '/logos'
                             "
                             :is-active="$route.path === '/logos'"
                             :class="{
@@ -190,6 +194,14 @@ export default {
         height: 50vh;
         max-height: min(get-vw(800px), 800px);
         min-height: min(get-vw(615px), 615px);
+        transition: all 0.3s ease-out;
+
+        &-full-size {
+            height: unset;
+            max-height: unset;
+            min-height: unset;
+            transition: all 0.3s ease-out;
+        }
     }
 
     &-header {

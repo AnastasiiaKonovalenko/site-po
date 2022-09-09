@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import HomeView from '../views/Home/HomeView.vue';
 import TheMenuWithPoint from '../views/Home/AboutMe.vue';
-import ThePizzaGhost from '../views/Home/components/ThePizzaGhost.vue';
+import ThePizzaGhost from '../views/Home/ThePizzaGhost.vue';
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
@@ -43,6 +43,9 @@ const router = createRouter({
             ],
         },
     ],
+    scrollBehavior() {
+        document.getElementById('app').scrollIntoView({ behavior: 'smooth' });
+    },
 });
 
 export default router;

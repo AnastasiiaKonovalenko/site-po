@@ -6,17 +6,19 @@ export default {
 
 <template>
     <div class="po-1 d-flex">
-        <div class="po-img-wrap main-bg-grey">
-            <div class="w">
-                <img
-                    class="po-img"
-                    src="../../../assets/photo.png"
-                    alt="my_photo"
-                />
-            </div>
-            <div class="po-my-name">
-                <div>Olha</div>
-                <div>Kharytonova</div>
+        <div>
+            <div class="po-img-wrap main-bg-grey">
+                <div class="w">
+                    <img
+                        class="po-img"
+                        src="../../../assets/photo.png"
+                        alt="my_photo"
+                    />
+                </div>
+                <div class="po-my-name">
+                    <div>Olha</div>
+                    <div>Kharytonova</div>
+                </div>
             </div>
         </div>
     </div>

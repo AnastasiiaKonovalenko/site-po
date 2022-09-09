@@ -1,6 +1,7 @@
 <template>
     <div
         class="po-menu-img-wrap position-relative"
+        :class="{ 'po-menu-img-wrap-active': isActive, }"
         @mouseenter="isHover = true"
         @mouseleave="isHover = false"
     >
@@ -65,6 +66,13 @@ export default {
         display: flex;
         transition: 0.3s;
 
+        &-active {
+            box-sizing: border-box;
+            padding-bottom: min(get-vw(42px), 42px);
+            background-color: black;
+            overflow-x: hidden;
+        }
+
         &-text {
             font-family: RedHatDisplay-Regular, sans-serif;
             color: var(--vt-c-grey-1);
@@ -91,6 +99,7 @@ export default {
         &-active {
             opacity: 1;
             right: 0;
+            object-fit: contain;
             width: calc(100vw - min(get-vw(403px), 403px));
         }
     }
