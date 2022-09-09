@@ -1,12 +1,25 @@
 <template>
     <v-footer padless>
         <v-col class="text-center" cols="12">
+            <v-col
+                v-if="$route.path === '/pizza-ghost'"
+                class="po-col d-flex flex-column justify-center"
+            >
+                <div class="d-flex justify-center">
+                    Project was completed in 2022
+                </div>
+                <div class="d-flex justify-center mt-custom-4">
+                    Thank you for watching
+                </div>
+                <div class="d-flex justify-center mt-custom-4">
+                    please contact me
+                </div>
+            </v-col>
+
             <v-col class="po-col">
                 {{ new Date().getFullYear() }} —
                 <strong>Olga Kharytonova</strong>
             </v-col>
-
-            <slot></slot>
         </v-col>
     </v-footer>
 </template>

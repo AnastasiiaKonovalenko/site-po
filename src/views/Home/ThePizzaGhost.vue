@@ -198,6 +198,7 @@
                 <p class="po-pizza-section-p mt-custom-3">
                     <a
                         class="po-pizza-section-link"
+                        target="_blank"
                         href="https://www.figma.com/proto/b3faQ9asyb9JvSEOyuvT1k/Pizza-Ghost-app?node-id=121%3A924&scaling=scale-down&page-id=0%3A1&starting-point-node-id=10%3A38">
                         You can evaluate the work of the prototype at this link
                     </a>
