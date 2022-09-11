@@ -53,6 +53,10 @@ export default {
     margin-top: min(get-vw(48px), 48px);
 }
 
+.mt-custom-13 {
+    margin-top: min(get-vw(52px), 52px);
+}
+
 .mt-custom-15 {
     margin-top: min(get-vw(60px), 60px);
 }
@@ -61,8 +65,48 @@ export default {
     margin-top: min(get-vw(64px), 64px);
 }
 
+.mt-custom-17 {
+    margin-top: min(get-vw(68px), 68px);
+}
+
+.mt-custom-19 {
+    margin-top: min(get-vw(76px), 76px);
+}
+
 .mt-custom-20 {
-    margin-top: min(get-vw(100px), 100px);
+    margin-top: min(get-vw(80px), 80px);
+}
+
+.mt-custom-21 {
+    margin-top: min(get-vw(84px), 84px);
+}
+
+.mt-custom-22 {
+    margin-top: min(get-vw(88px), 88px);
+}
+
+.mt-custom-23 {
+    margin-top: min(get-vw(92px), 92px);
+}
+
+.mt-custom-27 {
+    margin-top: min(get-vw(108px), 108px);
+}
+
+.mt-custom-29 {
+    margin-top: min(get-vw(116px), 116px);
+}
+
+.mt-custom-31 {
+    margin-top: min(get-vw(124px), 124px);
+}
+
+.mt-custom-33 {
+    margin-top: min(get-vw(132px), 132px);
+}
+
+.mt-custom-35 {
+    margin-top: min(get-vw(140px), 140px);
 }
 
 //######################### margin-bottom ########################
@@ -91,8 +135,20 @@ export default {
     margin-bottom: min(get-vw(64px), 64px);
 }
 
+//######################## margin-left ##################
 
+.ml-custom-10 {
+    margin-left: min(get-vw(40px), 40px);
+}
 //######################## padding-top ##################
+.pt-custom-1 {
+    padding-top: min(get-vw(4px), 4px);
+}
+
+.pt-custom-2 {
+    padding-top: min(get-vw(8px), 8px);
+}
+
 .pt-custom-10 {
     padding-top: min(get-vw(40px), 40px);
 }

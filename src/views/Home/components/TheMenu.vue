@@ -56,14 +56,14 @@ export default {
     }
 
     &-my-name {
-        font-family: Cinzel-Regular, serif;
+        font-family: RedHatDisplay-Light, serif;
         color: var(--color-text-lite);
         font-size: min(
             get-vw($third-party-text-font-size),
             $third-party-text-font-size
         );
 
-        padding-bottom: min(get-vw(70px), 70px);
+        padding-bottom: min(get-vw(81px), 81px);
 
         & div:first-child {
             line-height: 100.9%;

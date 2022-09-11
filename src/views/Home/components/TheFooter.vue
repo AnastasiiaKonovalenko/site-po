@@ -53,7 +53,7 @@ export default {
         bottom: 0;
         width: 1px;
         background-color: var(--vt-c-grey-1);
-        left: min(get-vw(403px), 403px);
+        left: min(get-vw(350px), 350px);
         z-index: 1000;
     }
 }

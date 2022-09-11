@@ -12,7 +12,7 @@
             >
                 <Transition name="fade">
                     <li
-                        v-if="markerTop > -42"
+                        v-if="markerTop > -89"
                         :style="{ top: `${markerTop}%` }"
                         class="po-menu-marker position-absolute"
                     ></li>
@@ -58,17 +58,17 @@ export default {
         '$route.path': {
             handler: function() {
                 setTimeout(() => {
-                    this.setMarkerTop(null)
+                    this.setMarkerTop(null);
                 });
             },
             deep: true,
             immediate: true,
-        }
+        },
     },
     mounted() {
         setTimeout(() => {
             this.setMarkerTop(null)
-        }, 50);
+        }, 4800);
         window.addEventListener('scroll', this.setIsMenuFixed);
     },
     beforeUnmount() {
@@ -92,29 +92,43 @@ export default {
                 if (idx === null) {
                     switch (this.$route.path) {
                         case '/':
-                            this.markerTop = 18;
+                            this.markerTop = 10;
                             break;
                         case '/cv':
-                            this.markerTop = 48;
+                            this.markerTop = 25;
+                            break;
+                        case '/pizza-ghost':
+                            this.markerTop = 41;
+                            break;
+                        case '/cadabra':
+                            this.markerTop = 57;
+                            break;
+                        case '/logos':
+                            this.markerTop = 73;
                             break;
                         case '/contacts':
-                            this.markerTop = 78;
-                            break;
-
-                        case '/pizza-ghost':
-                            this.markerTop = -39;
+                            this.markerTop = 88;
                             break;
                     }
                 } else {
                     switch (idx) {
                         case 0:
-                            this.markerTop = 18;
+                            this.markerTop = 10;
                             break;
                         case 1:
-                            this.markerTop = 48;
+                            this.markerTop = 25;
                             break;
                         case 2:
-                            this.markerTop = 78;
+                            this.markerTop = 41;
+                            break;
+                        case 3:
+                            this.markerTop = 57;
+                            break;
+                        case 4:
+                            this.markerTop = 73;
+                            break;
+                        case 5:
+                            this.markerTop = 88;
                             break;
                     }
                 }
@@ -130,7 +144,7 @@ export default {
 .position-fixed {
     position: fixed;
     top: 0;
-    left: min(get-vw(195px), 195px);
+    left: min(get-vw(141px), 141px);
 }
 .po {
     &-menu-marker {
@@ -148,7 +162,7 @@ export default {
         height: max-content;
         &-item {
             cursor: pointer;
-            padding: min(get-vw(28px), 28px) 0 min(get-vw(28px), 28px) 0;
+            padding: min(get-vw(20px), 20px) 0 min(get-vw(20px), 20px) 0;
 
             &:hover {
                 color: black;

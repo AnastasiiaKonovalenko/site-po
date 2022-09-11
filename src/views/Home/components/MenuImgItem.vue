@@ -1,37 +1,40 @@
 <template>
-    <div
-        class="po-menu-img-wrap position-relative"
-        :class="{ 'po-menu-img-wrap-active': isActive, }"
-        @mouseenter="isHover = true"
-        @mouseleave="isHover = false"
-    >
-        <Transition name="po-img-wrap-text">
-            <div
-                v-if="isHover && !isActive"
-                class="po-menu-img-wrap-text position-absolute"
-            >
-                <slot></slot>
-            </div>
-        </Transition>
+    <router-link :to="`/${path}`">
+        <div
+            class="po-menu-img-wrap position-relative"
+            @mouseenter="isHover = true"
+            @mouseleave="isHover = false"
+        >
+            <Transition name="po-img-wrap-text">
+                <div
+                    v-if="isHover && !isActive"
+                    class="po-menu-img-wrap-text position-absolute"
+                >
+                    <slot></slot>
+                </div>
+            </Transition>
 
-        <img
-            class="po-menu-img"
-            :class="{
-                big: isBig,
-                'po-menu-img-hover': isHover,
-                'po-menu-img-active': isActive,
-            }"
-            @click="isBig = true"
-            :src="imageSrc"
-            :alt="imgSrc"
-        />
-    </div>
+            <img
+                class="po-menu-img"
+                :class="{
+                    'po-menu-img-hover': isHover,
+                }"
+                @click="isBig = true"
+                :src="imageSrc"
+                :alt="imgSrc"
+            />
+        </div>
+    </router-link>
 </template>
 
 <script>
 export default {
     name: 'MenuImgItem',
     props: {
+        path: {
+            type: String,
+            required: true,
+        },
         imgSrc: {
             type: String,
             required: true,
@@ -68,27 +71,30 @@ export default {
 
         &-active {
             box-sizing: border-box;
-            padding-bottom: min(get-vw(42px), 42px);
-            background-color: black;
             overflow-x: hidden;
+            padding-left: min(get-vw(100px), 100px);
         }
 
         &-text {
+            font-style: normal;
             font-family: RedHatDisplay-Regular, sans-serif;
             color: var(--vt-c-grey-1);
-            width: min(get-vw(140px), 140px);
+            width: min(get-vw(187px), 187px);
             margin-right: min(get-vw(20px), 20px);
+            margin-top: min(get-vw(12px), 12px);
             padding-right: min(get-vw(20px), 20px);
             transition: all 0.6ms;
             z-index: 1;
-            left: -15%;
+            left: -45%;
         }
     }
 
     &-menu-img {
         position: relative;
         right: -46%;
-        width: min(get-vw(450px), 450px);
+        height: 16.45vh;
+        max-height: min(get-vw(264px), 264px);
+        min-height: min(get-vw(202px), 202px);
         object-fit: contain;
         transition: all 0.3s ease-out;
 

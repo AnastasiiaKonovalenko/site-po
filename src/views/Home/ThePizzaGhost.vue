@@ -1,5 +1,5 @@
 <template>
-    <div class="po-pizza position-relative flex-grow-1 d-flex flex-column">
+    <div class="position-relative flex-grow-1 d-flex flex-column po-pizza">
         <div class="hide-line">
             <Transition name="slide-fade">
                 <h2 v-if="isHeaderOnPortfolioDownloaded" class="po-header-2">
@@ -192,7 +192,10 @@
             <h3 class="po-pizza-section-header">Background</h3>
             <div class="po-pizza-section-info">
                 <p class="po-pizza-section-p">
-                    The result of the work was a functional prototype that simulates the main part of the user journey for the application. A beautiful and functional design is attractive to the user, distinguishes the business from competitors.
+                    The result of the work was a functional prototype that
+                    simulates the main part of the user journey for the
+                    application. A beautiful and functional design is attractive
+                    to the user, distinguishes the business from competitors.
                 </p>
 
                 <p class="po-pizza-section-p mt-custom-3">
@@ -348,6 +351,7 @@ setTimeout(() => {
 
 .hide-line {
     width: min(get-vw(580px), 580px);
-    padding-top: min(get-vw(150px), 150px);
+    padding-top: min(get-vw(100px), 100px);
+    min-height: min(get-vw(395px), 395px);
 }
 </style>

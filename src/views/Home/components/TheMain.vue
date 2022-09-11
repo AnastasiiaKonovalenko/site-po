@@ -1,9 +1,9 @@
 <template>
-    <div
-        :class="{ 'iii-bottom': !isTop }"
-        class="iii d-flex flex-grow-1 pt-custom-10"
-    >
-        <div class="iii_left d-flex">
+    <div class="iii d-flex flex-grow-1 pt-custom-10">
+        <div
+            :class="{ 'iii_left-hidden': !isAboutMeDownloaded }"
+            class="iii_left d-flex"
+        >
             <TheMenuList :menu-items="menuItems" />
         </div>
         <div
@@ -15,46 +15,49 @@
     </div>
 </template>
 
-<script>
+<script setup>
 import TheMenuList from './TheMenuList.vue';
-export default {
-    name: 'TheMain',
-    components: { TheMenuList },
-    data() {
-        return {
-            menuItems: [
-                {
-                    title: 'About me',
-                    path: '/',
-                },
-                {
-                    title: 'Download CV',
-                    path: '/cv',
-                },
-                {
-                    title: 'Contacts',
-                    path: '/contacts',
-                },
-            ],
-        };
+import { computed } from 'vue';
+import { useLayoutFlagsStore } from '../../../stores/layout-flags';
+import { storeToRefs } from 'pinia';
+const { isAboutMeDownloaded } = storeToRefs(
+    useLayoutFlagsStore()
+);
+
+const menuItems = [
+    {
+        title: 'About me',
+        path: '/',
     },
-    computed: {
-        isTop() {
-            return (
-                this.$route.path === '/' ||
-                this.$route.path === '/cv' ||
-                this.$route.path === '/contacts'
-            );
-        },
-        isFull() {
-            return (
-                this.$route.path === '/pizza-ghost' ||
-                this.$route.path === '/cadabra' ||
-                this.$route.path === '/logos'
-            );
-        },
+    {
+        title: 'Download CV',
+        path: '/cv',
     },
-};
+    {
+        title: 'Pizza Ghost',
+        path: '/pizza-ghost',
+    },
+    {
+        title: 'Cadabra',
+        path: '/cadabra',
+    },
+    {
+        title: 'Other',
+        path: '/logos',
+    },
+    {
+        title: 'Contacts',
+        path: '/contacts',
+    },
+];
+
+const isFull = computed(() => {
+    return (
+        this?.$route.path === '/pizza-ghost' ||
+        this?.$route.path === '/cadabra' ||
+        this?.$route.path === '/logos'
+    );
+});
 </script>
 
 <style lang="scss" scoped>
@@ -67,17 +70,30 @@ export default {
     border-right: 1px solid transparent;
     transition: all 0.4s ease-out;
 
-    &-bottom {
-        padding-top: 0;
-        transition: all 0.4s ease-out;
-    }
-
     &_left {
-        width: min(get-vw(403px), 403px);
-        min-width: min(get-vw(403px), 403px);
-        padding-top: min(get-vw(265px), 265px);
+        position: relative;
+        width: min(get-vw(350px), 350px);
+        min-width: min(get-vw(350px), 350px);
+        padding-top: min(get-vw(85px), 85px);
         padding-right: min(get-vw(54px), 54px);
+        margin-right: min(get-vw(54px), 54px);
         transition: all 0.4s ease-out;
+
+        &:after {
+            content: '';
+            position: absolute;
+            width: 1px;
+            left: 100%;
+            top: min(get-vw(120px), 120px);
+            bottom: 0;
+            background-color: var(--vt-c-grey-1);
+            transition: all 0.8s ease-out;
+        }
+
+        &-hidden {
+            transform: translateY(100%);
+            transition: all 0.8s ease-out;
+        }
     }
 
     &_right {
@@ -85,7 +101,6 @@ export default {
         box-sizing: border-box;
         margin-right: min(get-vw(452px), 452px);
         padding-left: min(get-vw(43px), 43px);
-        border-left: 1px solid var(--vt-c-grey-1);
 
         &-full {
             margin-right: min(get-vw(304px), 304px);

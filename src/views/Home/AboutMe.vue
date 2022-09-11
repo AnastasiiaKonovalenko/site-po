@@ -8,7 +8,10 @@
             </Transition>
         </div>
 
-        <div class="po-about-me flex-grow-1">
+        <div
+            class="po-about-me flex-grow-1 pt-custom-2"
+            :class="{ 'po-about-me-hidden': !isAboutMeDownloaded }"
+        >
             <p class="po-about-me-bold mb-custom-11">My name is Olga,</p>
 
             <p class="mb-custom-11">
@@ -59,13 +62,11 @@
 
 <script setup>
 import { useLayoutFlagsStore } from '../../stores/layout-flags';
-const { setIsHeaderOnPortfolioDownloaded } = useLayoutFlagsStore();
 import { storeToRefs } from 'pinia';
-const { isHeaderOnPortfolioDownloaded } = storeToRefs(useLayoutFlagsStore());
+const { isHeaderOnPortfolioDownloaded, isAboutMeDownloaded } = storeToRefs(
+    useLayoutFlagsStore()
+);
 
-setTimeout(() => {
-    setIsHeaderOnPortfolioDownloaded();
-}, 1000);
 </script>
 
 <style lang="scss" scoped>
@@ -92,7 +93,10 @@ setTimeout(() => {
             font-family: 'Cinzel-Regular', serif;
             font-style: normal;
             font-weight: 400;
-            font-size: min(get-vw($forth-party-text-font-size), $forth-party-text-font-size);
+            font-size: min(
+                get-vw($forth-party-text-font-size),
+                $forth-party-text-font-size
+            );
             line-height: 100.9%;
             margin-top: min(get-vw(60px), 60px);
             list-style: none;
@@ -110,12 +114,24 @@ setTimeout(() => {
 
     &-about-me {
         font-family: 'Cinzel-Regular', serif;
-        font-size: min(get-vw($secondary-text-font-size), $secondary-text-font-size);
+        font-size: min(
+            get-vw($secondary-text-font-size),
+            $secondary-text-font-size
+        );
         line-height: 150%;
         color: var(--vt-c-grey-1);
+        transition: all 0.8s ease-out;
 
         &-bold {
-            font-size: min(get-vw($forth-party-text-font-size), $forth-party-text-font-size);
+            font-size: min(
+                get-vw($forth-party-text-font-size),
+                $forth-party-text-font-size
+            );
+        }
+
+        &-hidden {
+            transform: translateY(100%);
+            transition: all 0.8s ease-out;
         }
     }
 }
