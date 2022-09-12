@@ -372,7 +372,7 @@ const { isHeaderOnPortfolioDownloaded, isAboutMeDownloaded } = storeToRefs(
 
 .hide-line {
     width: min(get-vw(580px), 580px);
-    padding-top: min(get-vw(150px), 150px);
+    padding-top: min(get-vw(40px), 40px);
     min-height: min(get-vw(395px), 395px);
 }
 </style>

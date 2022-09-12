@@ -14,7 +14,7 @@
             >
                 <Transition name="fade">
                     <li
-                        v-if="markerTop > -89"
+                        v-if="markerTop > -89 && $route.path !== '/logos'"
                         :style="{ top: `${markerTop}%` }"
                         class="po-menu-marker position-absolute"
                     ></li>

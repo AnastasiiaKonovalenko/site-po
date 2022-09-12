@@ -1,6 +1,18 @@
 <template>
     <div class="flex-grow-1 d-flex flex-column po-logos">
         <div
+            v-if="isLoading"
+            class="d-flex justify-center align-center flex-grow-1"
+        >
+            <v-progress-circular
+                :size="50"
+                color="#858585"
+                indeterminate
+            ></v-progress-circular>
+        </div>
+
+        <div
+            v-else
             class="d-flex po-logos-container flex-wrap flex-grow-1 justify-center"
         >
             <div
@@ -24,6 +36,9 @@
 
 <script setup>
 import TheVideo from './components/TheVideo.vue';
+import { onBeforeMount, ref } from 'vue';
+
+let isLoading = ref(true);
 
 const logos = [
     {
@@ -59,6 +74,36 @@ const logos = [
         photos: 9,
     },
 ];
+
+onBeforeMount(() => {
+    const promises = [];
+
+    logos.forEach((item) => {
+        for (let i = 0; i < item.photos; i++) {
+            const newPromise = new Promise((resolve, reject) => {
+                const img = new Image();
+                img.src = new URL(
+                    `../../assets/${item.folder}/${i}.jpg`,
+                    import.meta.url
+                ).href;
+                img.onload = resolve;
+                img.onerror = reject;
+            });
+
+            promises.push(newPromise);
+        }
+    });
+
+    Promise.all(promises)
+        .then(() => {
+            console.log('Images loaded!');
+            isLoading.value = false;
+        })
+        .catch((error) => {
+            console.error('Some image(s) failed loading!');
+            console.error(error.message);
+        });
+});
 </script>
 
 <style lang="scss" scoped>
