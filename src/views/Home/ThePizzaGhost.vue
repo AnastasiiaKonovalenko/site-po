@@ -9,14 +9,19 @@
             </Transition>
         </div>
 
-        <div class="po-pizza-section position-relative">
-            <div class="po-pizza-section-divider position-absolute"></div>
+        <div
+            :class="{ 'po-hidden': !isAboutMeDownloaded }"
+            class="po-pizza-section position-relative"
+        >
+            <div class="po-pizza-section-divider position-absolute"/>
             <div class="po-pizza-section-wrap">
-                <img
-                    src="../../assets/cheese_hero-1.jpg"
+                <video
+                    ref="videoRef"
                     class="po-pizza-section-img"
-                    :class="{ 'po-pizza-section-img-full': true }"
-                    alt="pizza-app"
+                    autoplay
+                    loop
+                    muted
+                    src="../../assets/PizzaGhostApp.mp4"
                 />
             </div>
             <h3 class="po-pizza-section-header">Background</h3>
@@ -42,7 +47,13 @@
         </div>
 
         <div class="po-pizza-section position-relative">
-            <div class="po-pizza-section-divider position-absolute"></div>
+            <div
+                :class="{
+                    'po-pizza-section-divider-hidden':
+                        isHeaderOnPortfolioDownloaded,
+                }"
+                class="po-pizza-section-divider position-absolute"
+            ></div>
             <div class="po-pizza-section-wrap">
                 <img
                     src="../../assets/cheese_hero-1.jpg"
@@ -141,7 +152,11 @@
                     alt="pizza-app"
                 />
             </div>
-            <h4 class="po-pizza-section-img-subheader mt-custom-15 mb-custom-15">Wireframe</h4>
+            <h4
+                class="po-pizza-section-img-subheader mt-custom-15 mb-custom-15"
+            >
+                Wireframe
+            </h4>
             <div class="po-pizza-section-wrap">
                 <img
                     src="../../assets/cheese_hero-3.jpg"
@@ -151,7 +166,11 @@
                 />
             </div>
 
-            <h4 class="po-pizza-section-img-subheader mt-custom-15 mb-custom-15">UI Kit</h4>
+            <h4
+                class="po-pizza-section-img-subheader mt-custom-15 mb-custom-15"
+            >
+                UI Kit
+            </h4>
             <div class="po-pizza-section-wrap">
                 <img
                     src="../../assets/cheese_hero-4.jpg"
@@ -202,7 +221,8 @@
                     <a
                         class="po-pizza-section-link"
                         target="_blank"
-                        href="https://www.figma.com/proto/b3faQ9asyb9JvSEOyuvT1k/Pizza-Ghost-app?node-id=121%3A924&scaling=scale-down&page-id=0%3A1&starting-point-node-id=10%3A38">
+                        href="https://www.figma.com/proto/b3faQ9asyb9JvSEOyuvT1k/Pizza-Ghost-app?node-id=121%3A924&scaling=scale-down&page-id=0%3A1&starting-point-node-id=10%3A38"
+                    >
                         You can evaluate the work of the prototype at this link
                     </a>
                 </p>
@@ -212,11 +232,13 @@
         <div class="po-pizza-section position-relative">
             <div class="po-pizza-section-divider position-absolute"></div>
             <div class="po-pizza-section-wrap po-pizza-section-wrap-last">
-                <img
-                    src="../../assets/cheese_hero-6.jpg"
+                <video
+                    ref="videoRef"
                     class="po-pizza-section-img"
-                    :class="{ 'po-pizza-section-img-full': true }"
-                    alt="pizza-app"
+                    autoplay
+                    loop
+                    muted
+                    src="../../assets/PizzaGhost.mp4"
                 />
             </div>
         </div>
@@ -225,13 +247,10 @@
 
 <script setup>
 import { useLayoutFlagsStore } from '../../stores/layout-flags';
-const { setIsHeaderOnPortfolioDownloaded } = useLayoutFlagsStore();
 import { storeToRefs } from 'pinia';
-const { isHeaderOnPortfolioDownloaded } = storeToRefs(useLayoutFlagsStore());
-
-setTimeout(() => {
-    setIsHeaderOnPortfolioDownloaded();
-}, 1000);
+const { isHeaderOnPortfolioDownloaded, isAboutMeDownloaded } = storeToRefs(
+    useLayoutFlagsStore()
+);
 </script>
 
 <style lang="scss" scoped>
@@ -243,6 +262,7 @@ setTimeout(() => {
         &-section {
             color: var(--vt-c-grey-1);
             margin-top: min(get-vw(100px), 100px);
+            transition: all 0.8s ease-out;
 
             &-divider {
                 top: 0;
@@ -250,22 +270,24 @@ setTimeout(() => {
                 right: -100000px;
                 height: 1px;
                 background-color: var(--vt-c-grey-1);
+                transition: all 0.8s ease-out;
+
+                &-hidden {
+                    left: 100000px;
+                    transition: all 0.8s ease-out;
+                }
             }
 
             &-wrap {
                 &-last {
                     margin-bottom: min(get-vw(463px), 463px);
                 }
-                //height: min(get-vw(676px), 676px);
-                //width: min(get-vw(920px), 920px);
-                //background-color: red;
             }
 
             &-img {
                 width: min(get-vw(920px), 920px);
                 object-fit: contain;
-                &-full {
-                }
+
             }
 
             &-header {
@@ -351,7 +373,7 @@ setTimeout(() => {
 
 .hide-line {
     width: min(get-vw(580px), 580px);
-    padding-top: min(get-vw(100px), 100px);
+    padding-top: min(get-vw(150px), 150px);
     min-height: min(get-vw(395px), 395px);
 }
 </style>

@@ -1,5 +1,5 @@
 <script setup>
-import { computed, onMounted } from 'vue';
+import { computed, onMounted, ref } from 'vue';
 import { useLayoutFlagsStore } from '../../stores/layout-flags';
 import TheMenu from './components/TheMenu.vue';
 import MenuImgItem from './components/MenuImgItem.vue';
@@ -49,6 +49,21 @@ const projects = computed(() => [
     },
 ]);
 
+let isFabVisible = ref(false);
+
+
+window.onscroll = function () {
+    isFabVisible.value = window.scrollY > window.screen.height;
+};
+
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth',
+    });
+}
+
 onMounted(() => {
     const setIsAboutMeDownloadedTime = route.path === '/' ? 3400 : 2600;
 
@@ -74,7 +89,7 @@ onMounted(() => {
         <div class="po-head d-flex w-100 overflow-hidden">
             <TheMenu />
 
-            <div class="po-2 d-flex flex-grow-1 position-relative">
+            <div class="po-2 d-flex flex-column flex-grow-1 position-relative">
                 <div
                     :class="{
                         'po-2-background': !isBackgroundHidden,
@@ -82,6 +97,8 @@ onMounted(() => {
                     }"
                     class="position-absolute"
                 />
+
+                <!--                <div class="ml-custom-10 flex-grow-1" style="width: 100px; background-color: red; z-index: 5"></div>-->
 
                 <div class="po-header flex-grow-1 d-flex flex-column">
                     <div class="po-header-subtext ml-custom-10 mt-custom-13">
@@ -126,6 +143,16 @@ onMounted(() => {
         <TheMain />
 
         <TheFooter />
+
+        <v-btn
+
+            @click="scrollToTop"
+            v-if="isFabVisible"
+            class="fab-btn position-fixed"
+            color="#858585"
+        >
+            <v-icon color="white"> mdi-arrow-up </v-icon>
+        </v-btn>
     </div>
 </template>
 
@@ -216,8 +243,20 @@ onMounted(() => {
     position: fixed;
 
     &-hidden {
-        transform: translateX(200px);
+        transform: translateX(400px);
         transition: all 0.8s ease-out;
     }
+}
+
+.fab-btn {
+    padding: 0!important;
+    right: 0;
+    bottom: 0;
+    margin: 0 min(get-vw(20px), 20px) min(get-vw(20px), 20px) 0;
+    height: min(get-vw(40px), 40px) !important;
+    width: min(get-vw(40px), 40px) !important;
+    min-height: min(get-vw(40px), 40px) !important;
+    min-width: min(get-vw(40px), 40px) !important;
+    border-radius: 50%;
 }
 </style>

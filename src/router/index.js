@@ -1,10 +1,12 @@
-import { createRouter, createWebHistory } from 'vue-router';
+import { createRouter, createWebHashHistory } from 'vue-router';
 import HomeView from '../views/Home/HomeView.vue';
 import TheMenuWithPoint from '../views/Home/AboutMe.vue';
 import ThePizzaGhost from '../views/Home/ThePizzaGhost.vue';
+import Cadabra from '../views/Home/TheCadabra.vue';
+import Logos from '../views/Home/TheLogos.vue';
 
 const router = createRouter({
-    history: createWebHistory(import.meta.env.BASE_URL),
+    history: createWebHashHistory(),
     routes: [
         {
             path: '/',
@@ -23,23 +25,13 @@ const router = createRouter({
                 {
                     name: 'cadabra',
                     path: 'cadabra',
-                    component: ThePizzaGhost,
+                    component: Cadabra,
                 },
                 {
                     name: 'logos',
                     path: 'logos',
-                    component: ThePizzaGhost,
-                },
-                {
-                    name: 'cv',
-                    path: 'cv',
-                    component: ThePizzaGhost,
-                },
-                {
-                    name: 'contacts',
-                    path: 'contacts',
-                    component: ThePizzaGhost,
-                },
+                    component: Logos,
+                }
             ],
         },
     ],

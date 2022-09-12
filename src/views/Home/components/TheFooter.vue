@@ -1,5 +1,5 @@
 <template>
-    <v-footer padless>
+    <v-footer :class="{aaa: isLogos}" padless>
         <v-col class="text-center" cols="12">
             <v-col
                 v-if="$route.path === '/pizza-ghost'"
@@ -24,10 +24,14 @@
     </v-footer>
 </template>
 
-<script>
-export default {
-    name: 'TheFooter',
-};
+<script setup>
+import { computed } from 'vue';
+import { useRoute } from 'vue-router';
+
+const route = useRoute();
+const isLogos = computed(() => {
+    return (route.path === '/logos');
+})
 </script>
 
 <style lang="scss" scoped>
@@ -53,7 +57,7 @@ export default {
         bottom: 0;
         width: 1px;
         background-color: var(--vt-c-grey-1);
-        left: min(get-vw(350px), 350px);
+        left: min(get-vw(362px), 362px);
         z-index: 1000;
     }
 }
@@ -79,5 +83,11 @@ export default {
 .po-col {
     font-size: min(get-vw(16px), 16x);
     margin-top: min(get-vw(16px), 16px);
+}
+
+.aaa {
+    &:after {
+        display: none;
+    }
 }
 </style>

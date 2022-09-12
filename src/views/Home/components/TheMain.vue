@@ -1,14 +1,23 @@
 <template>
-    <div class="iii d-flex flex-grow-1 pt-custom-10">
+    <div
+        :class="{ iii_logos: isLogos }"
+        class="iii d-flex flex-grow-1 pt-custom-10"
+    >
         <div
-            :class="{ 'iii_left-hidden': !isAboutMeDownloaded }"
+            :class="{
+                'iii_logos-left': isLogos,
+                'iii_left-hidden': !isAboutMeDownloaded,
+            }"
             class="iii_left d-flex"
         >
             <TheMenuList :menu-items="menuItems" />
         </div>
         <div
-            :class="{ 'iii_right-full': isFull }"
-            class="iii_right d-flex position-relative"
+            :class="{
+                'iii_logos-right': isLogos,
+                'iii_right-full': isFull,
+            }"
+            class="iii_right flex-grow-1 d-flex position-relative"
         >
             <router-view />
         </div>
@@ -20,19 +29,16 @@ import TheMenuList from './TheMenuList.vue';
 import { computed } from 'vue';
 import { useLayoutFlagsStore } from '../../../stores/layout-flags';
 import { storeToRefs } from 'pinia';
-const { isAboutMeDownloaded } = storeToRefs(
-    useLayoutFlagsStore()
-);
+const { isAboutMeDownloaded } = storeToRefs(useLayoutFlagsStore());
+import { useRoute } from 'vue-router';
 
+const route = useRoute();
 const menuItems = [
     {
         title: 'About me',
         path: '/',
     },
-    {
-        title: 'Download CV',
-        path: '/cv',
-    },
+
     {
         title: 'Pizza Ghost',
         path: '/pizza-ghost',
@@ -46,16 +52,24 @@ const menuItems = [
         path: '/logos',
     },
     {
+        title: 'Download CV',
+        path: '/cv',
+    },
+    {
         title: 'Contacts',
         path: '/contacts',
     },
 ];
 
+const isLogos = computed(() => {
+    return (route.path === '/logos');
+})
+
 const isFull = computed(() => {
     return (
-        this?.$route.path === '/pizza-ghost' ||
-        this?.$route.path === '/cadabra' ||
-        this?.$route.path === '/logos'
+        route.path === '/pizza-ghost' ||
+        route.path === '/cadabra' ||
+        route.path === '/logos'
     );
 });
 </script>
@@ -72,11 +86,11 @@ const isFull = computed(() => {
 
     &_left {
         position: relative;
-        width: min(get-vw(350px), 350px);
-        min-width: min(get-vw(350px), 350px);
+        width: min(get-vw(362px), 362px);
+        min-width: min(get-vw(362px), 362px);
         padding-top: min(get-vw(85px), 85px);
         padding-right: min(get-vw(54px), 54px);
-        margin-right: min(get-vw(54px), 54px);
+        margin-right: min(get-vw(42px), 42px);
         transition: all 0.4s ease-out;
 
         &:after {
@@ -86,6 +100,7 @@ const isFull = computed(() => {
             left: 100%;
             top: min(get-vw(120px), 120px);
             bottom: 0;
+            z-index: 10000;
             background-color: var(--vt-c-grey-1);
             transition: all 0.8s ease-out;
         }
@@ -104,6 +119,20 @@ const isFull = computed(() => {
 
         &-full {
             margin-right: min(get-vw(304px), 304px);
+        }
+    }
+
+    &_logos {
+        margin-right: 0;
+        &-left {
+            &:after {
+                display: none;
+            }
+        }
+        &-right {
+            padding-left: 0 !important;
+            margin-right: 0 !important;
+            padding-bottom: 0;
         }
     }
 }

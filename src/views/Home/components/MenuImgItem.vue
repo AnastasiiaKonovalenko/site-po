@@ -56,6 +56,14 @@ export default {
                 .href;
         },
     },
+    watch: {
+        '$route.path': {
+            deep: true,
+            handler(path) {
+                path !== '/' ? (this.isHover = false) : true;
+            },
+        },
+    },
 };
 </script>
 

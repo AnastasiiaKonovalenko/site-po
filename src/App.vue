@@ -12,7 +12,7 @@ export default {
 
     data: () => ({
         //
-    }),
+    })
 };
 </script>
 <style lang="scss">
@@ -139,6 +139,18 @@ export default {
 
 .ml-custom-10 {
     margin-left: min(get-vw(40px), 40px);
+}
+
+.ml-custom-15 {
+    margin-left: min(get-vw(60px), 60px);
+}
+
+.ml-custom-16 {
+    margin-left: min(get-vw(64px), 64px);
+}
+
+.ml-custom-20 {
+    margin-left: min(get-vw(80px), 80px);
 }
 //######################## padding-top ##################
 .pt-custom-1 {

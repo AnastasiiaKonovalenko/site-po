@@ -10,7 +10,7 @@
 
         <div
             class="po-about-me flex-grow-1 pt-custom-2"
-            :class="{ 'po-about-me-hidden': !isAboutMeDownloaded }"
+            :class="{ 'po-hidden': !isAboutMeDownloaded }"
         >
             <p class="po-about-me-bold mb-custom-11">My name is Olga,</p>
 
@@ -127,11 +127,6 @@ const { isHeaderOnPortfolioDownloaded, isAboutMeDownloaded } = storeToRefs(
                 get-vw($forth-party-text-font-size),
                 $forth-party-text-font-size
             );
-        }
-
-        &-hidden {
-            transform: translateY(100%);
-            transition: all 0.8s ease-out;
         }
     }
 }
