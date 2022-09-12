@@ -280,14 +280,13 @@ const { isHeaderOnPortfolioDownloaded, isAboutMeDownloaded } = storeToRefs(
 
             &-wrap {
                 &-last {
-                    margin-bottom: min(get-vw(463px), 463px);
+                    margin-bottom: min(get-vw(163px), 163px);
                 }
             }
 
             &-img {
                 width: min(get-vw(920px), 920px);
                 object-fit: contain;
-
             }
 
             &-header {

@@ -1,46 +1,62 @@
 <template>
     <div class="flex-grow-1 d-flex flex-column po-logos">
-        <div class="d-flex po-logos-container flex-wrap flex-grow-1 justify-center">
+        <div
+            class="d-flex po-logos-container flex-wrap flex-grow-1 justify-center"
+        >
             <div
-                :class="{ 'ml-custom-16': idx % 2 > 0, 'mt-custom-19':  idx > 1}"
+                :class="{
+                    'ml-custom-16': idx % 2 > 0,
+                    'mt-custom-19': idx > 1,
+                }"
                 class="po-logos-item d-flex justify-center"
-                v-for="(logo, idx) in logos"
+                v-for="(logoItems, idx) in logos"
                 :key="idx"
             >
-                <TheVideo :path="logo.path" />
+                <TheVideo
+                    :index="idx + 1"
+                    :folder="logoItems.folder"
+                    :photosCount="logoItems.photos"
+                />
             </div>
         </div>
     </div>
 </template>
 
 <script setup>
-
 import TheVideo from './components/TheVideo.vue';
 
 const logos = [
     {
-        path: 'SIS.mp4',
+        folder: 'sis',
+        photos: 4,
     },
     {
-        path: 'AMC.mp4',
+        folder: 'amc',
+        photos: 6,
     },
     {
-        path: 'Tri_1.mp4',
+        folder: 'tri_1',
+        photos: 8,
     },
     {
-        path: 'Tri_2.mp4',
+        folder: 'tri_2',
+        photos: 4,
     },
     {
-        path: 'MEM.mp4',
+        folder: 'mem',
+        photos: 5,
     },
     {
-        path: 'PizzaGhost1_2.mp4',
+        folder: 'pizza',
+        photos: 5,
     },
     {
-        path: 'Logos.mp4',
+        folder: 'logos',
+        photos: 8,
     },
     {
-        path: 'REP.mp4',
+        folder: 'rep',
+        photos: 9,
     },
 ];
 </script>
@@ -56,7 +72,6 @@ const logos = [
     }
 
     &-logos-container {
-
     }
 
     &-logos-item {

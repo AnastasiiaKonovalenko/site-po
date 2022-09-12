@@ -249,7 +249,7 @@ onMounted(() => {
 }
 
 .fab-btn {
-    padding: 0!important;
+    padding: 0 !important;
     right: 0;
     bottom: 0;
     margin: 0 min(get-vw(20px), 20px) min(get-vw(20px), 20px) 0;

@@ -136,6 +136,9 @@ export default {
 }
 
 //######################## margin-left ##################
+.ml-custom-1 {
+    margin-left: min(get-vw(4px), 4px);
+}
 
 .ml-custom-10 {
     margin-left: min(get-vw(40px), 40px);
@@ -167,5 +170,9 @@ export default {
 
 .pt-custom-16 {
     padding-top: min(get-vw(64px), 64px);
+}
+
+.pt-custom-25 {
+    padding-top: min(get-vw(100px), 100px);
 }
 </style>

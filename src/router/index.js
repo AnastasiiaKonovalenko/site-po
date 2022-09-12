@@ -31,7 +31,7 @@ const router = createRouter({
                     name: 'logos',
                     path: 'logos',
                     component: Logos,
-                }
+                },
             ],
         },
     ],

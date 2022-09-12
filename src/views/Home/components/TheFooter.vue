@@ -1,26 +1,25 @@
 <template>
-    <v-footer :class="{aaa: isLogos}" padless>
-        <v-col class="text-center" cols="12">
-            <v-col
-                v-if="$route.path === '/pizza-ghost'"
-                class="po-col d-flex flex-column justify-center"
-            >
-                <div class="d-flex justify-center">
-                    Project was completed in 2022
-                </div>
-                <div class="d-flex justify-center mt-custom-4">
-                    Thank you for watching
-                </div>
-                <div class="d-flex justify-center mt-custom-4">
-                    please contact me
-                </div>
-            </v-col>
+    <v-footer class="po-footer d-flex" :class="{ aaa: isLogos }" padless>
+        <div class="text-center flex-grow-1">
+            <div class="po-footer-1 d-flex justify-center">
+                Thank you for watching!
+            </div>
+            <div class="po-footer-2 mt-custom-10 mb-custom-2">
+                Olga Kharytonova -
+                <strong>{{ new Date().getFullYear() }}</strong>
+            </div>
 
-            <v-col class="po-col">
-                {{ new Date().getFullYear() }} —
-                <strong>Olga Kharytonova</strong>
-            </v-col>
-        </v-col>
+            <div class="po-footer-3">
+                <strong>
+                    <a href="mailto:womkad@gmail.com">womkad@gmail.com</a>
+                </strong>
+                <span class="ml-custom-1">
+                    <a target="_blank" href="tel:+37062527439">
+                        +370 625 27 439
+                    </a>
+                </span>
+            </div>
+        </div>
     </v-footer>
 </template>
 
@@ -30,8 +29,8 @@ import { useRoute } from 'vue-router';
 
 const route = useRoute();
 const isLogos = computed(() => {
-    return (route.path === '/logos');
-})
+    return route.path === '/logos';
+});
 </script>
 
 <style lang="scss" scoped>
@@ -63,20 +62,13 @@ const isLogos = computed(() => {
 }
 
 .po-footer {
-    border-top: 1px solid #5e5e5e;
+    padding-top: min(get-vw(48px), 48px);
+    padding-bottom: min(get-vw(48px), 48px);
+    color: var(--vt-c-grey-1);
+    font-size: min(get-vw(18px), 18px);
 
-    &-text {
-        padding-top: min(get-vw(100px), 100px);
-        padding-bottom: min(get-vw(237px), 237px);
-        margin-left: min(get-vw(403px), 403px);
-        margin-right: min(get-vw(284px), 284px);
-        border-left: 1px solid var(--vt-c-grey-1);
-        text-transform: uppercase;
-
-        div {
-            font-family: Cinzel-Regular, serif;
-            color: var(--vt-c-grey-1);
-        }
+    &-3 {
+        font-family: RedHatDisplay-Regular, serif;
     }
 }
 
@@ -89,5 +81,10 @@ const isLogos = computed(() => {
     &:after {
         display: none;
     }
+}
+
+a {
+    font-style: unset;
+    text-decoration: unset;
 }
 </style>
