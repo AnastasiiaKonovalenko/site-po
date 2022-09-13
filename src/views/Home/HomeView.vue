@@ -1,5 +1,5 @@
 <script setup>
-    import { computed, onMounted, ref } from 'vue';
+import { computed, onMounted, ref } from 'vue';
 import { useLayoutFlagsStore } from '../../stores/layout-flags';
 import TheMenu from './components/TheMenu.vue';
 import MenuImgItem from './components/MenuImgItem.vue';
@@ -52,6 +52,12 @@ const projects = computed(() => [
 
 let isFabVisible = ref(false);
 let isCriticalCssLoading = ref(true);
+const isHeaderProjectImageVisible = computed(() => route.path !== '/');
+const imageSrc = computed(() => {
+    const src = projects.value.find((item) => item.isActive)?.imgSrc;
+
+    return new URL(`../../assets/${src}`, import.meta.url).href;
+});
 
 window.onscroll = function () {
     isFabVisible.value = window.scrollY > window.screen.height;
@@ -103,7 +109,19 @@ onMounted(() => {
                     class="position-absolute"
                 />
 
-                <!--                <div class="ml-custom-10 flex-grow-1" style="width: 100px; background-color: red; z-index: 5"></div>-->
+                <div
+                    :class="{
+                        'project-header-hidden': !isHeaderProjectImageVisible,
+                    }"
+                    class="project-header position-relative ml-custom-10"
+                    style="z-index: 1"
+                >
+                    <img
+                        style="height: 100%; object-fit: cover; opacity: 1"
+                        :src="imageSrc"
+                        alt=""
+                    />
+                </div>
 
                 <div class="po-header flex-grow-1 d-flex flex-column">
                     <div class="po-header-subtext ml-custom-10 mt-custom-13">
@@ -256,5 +274,19 @@ onMounted(() => {
     min-height: min(get-vw(40px), 40px) !important;
     min-width: min(get-vw(40px), 40px) !important;
     border-radius: 50%;
+}
+
+.project-header {
+    height: 50vh;
+    max-height: min(get-vw(800px), 800px);
+    min-height: min(get-vw(615px), 615px);
+    transition: all 0.8s ease-out;
+
+    &-hidden {
+        overflow: hidden;
+        height: 0;
+        min-height: 0;
+        transition: all 0.8s ease-out;
+    }
 }
 </style>
