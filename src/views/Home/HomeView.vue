@@ -288,6 +288,7 @@ onMounted(() => {
     max-height: min(get-vw(800px), 800px);
     transition: all 0.8s ease-out;
     margin-left: min(get-vw(100px), 100px);
+    min-height: min(get-vw(615px), 615px);
 
     &-hidden {
         overflow: hidden;
