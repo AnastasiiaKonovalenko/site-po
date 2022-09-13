@@ -92,6 +92,7 @@ const isFull = computed(() => {
         padding-right: min(get-vw(54px), 54px);
         margin-right: min(get-vw(42px), 42px);
         transition: all 0.4s ease-out;
+        z-index: 5;
 
         &:after {
             content: '';

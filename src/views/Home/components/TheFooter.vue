@@ -39,16 +39,6 @@ const isLogos = computed(() => {
 
 .v-footer::v-deep {
     position: relative;
-    &:before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 1px;
-        background-color: var(--vt-c-grey-1);
-        z-index: 1000;
-    }
     &:after {
         content: '';
         position: absolute;
