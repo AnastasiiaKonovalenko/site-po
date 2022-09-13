@@ -109,17 +109,12 @@ onBeforeMount(() => {
 <style lang="scss" scoped>
 @import '../../styles/functions.scss';
 @import '../../styles/vars.scss';
-.po {
-    &-logos {
-        padding-top: min(get-vw(100px), 100px);
-        padding-bottom: min(get-vw(100px), 100px);
-        background-color: var(--vt-c-black);
-    }
+.po-logos {
+    padding-top: min(get-vw(100px), 100px);
+    padding-bottom: min(get-vw(100px), 100px);
+    background-color: var(--vt-c-black);
 
-    &-logos-container {
-    }
-
-    &-logos-item {
+    &-item {
         width: min(get-vw(560px), 560px);
         height: min(get-vw(315px), 315px);
     }

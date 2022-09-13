@@ -1,66 +1,66 @@
 <template>
     <div class="position-relative flex-grow-1 d-flex flex-column po-pizza">
-        <div class="hide-line">
-            <Transition name="slide-fade">
-                <h2 v-if="isHeaderOnPortfolioDownloaded" class="po-header-2">
-                    marketing agency website, corporate identity and logobook
-                </h2>
-            </Transition>
-        </div>
-
-        <div
-            :class="{ 'po-hidden': !isAboutMeDownloaded }"
-            class="po-pizza-section position-relative"
-        >
-            <div class="po-pizza-section-divider position-absolute" />
-            <div class="po-pizza-section-wrap">
-                <video
-                    ref="videoRef"
-                    class="po-pizza-section-img"
-                    autoplay
-                    loop
-                    muted
-                    src="../../assets/Kadabra_1.mp4"
-                />
+            <div class="hide-line">
+                <Transition name="slide-fade">
+                    <h2 v-if="isHeaderOnPortfolioDownloaded" class="po-header-2">
+                        marketing agency website, corporate identity and logobook
+                    </h2>
+                </Transition>
             </div>
-            <h3 class="po-pizza-section-header">Background</h3>
-            <div class="po-pizza-section-info">
-                <p class="po-pizza-section-p">
-                    It is a startup Marketing House in the Kingdom Saudi Arabia.
-                </p>
 
-                <p class="po-pizza-section-p mt-custom-3">
-                    The idea of a startup is based on the peculiarities of the
-                    local market, when the country was closed for many years,
-                    and more recently it has been striving to attract
-                    representative offices of global business. So, along with
-                    the preparation of the investment package, I developed a
-                    logo and corporate identity, which you can see below.
-                </p>
+            <div
+                :class="{ 'po-hidden': !isAboutMeDownloaded }"
+                class="po-pizza-section position-relative"
+            >
+                <div class="po-pizza-section-divider position-absolute" />
+                <div class="po-pizza-section-wrap">
+                    <video
+                        ref="videoRef"
+                        class="po-pizza-section-img"
+                        autoplay
+                        loop
+                        muted
+                        src="../../assets/Kadabra_1.mp4"
+                    />
+                </div>
+                <h3 class="po-pizza-section-header">Background</h3>
+                <div class="po-pizza-section-info">
+                    <p class="po-pizza-section-p">
+                        It is a startup Marketing House in the Kingdom Saudi Arabia.
+                    </p>
 
-                <p class="po-pizza-section-p mt-custom-3">
-                    The company's website, where I am acting as UI/UX designer,
-                    is under construction, currently protected by the NDA. I
-                    promise to show it here later, when there is permission from
-                    the copyright holders.
-                </p>
+                    <p class="po-pizza-section-p mt-custom-3">
+                        The idea of a startup is based on the peculiarities of the
+                        local market, when the country was closed for many years,
+                        and more recently it has been striving to attract
+                        representative offices of global business. So, along with
+                        the preparation of the investment package, I developed a
+                        logo and corporate identity, which you can see below.
+                    </p>
+
+                    <p class="po-pizza-section-p mt-custom-3">
+                        The company's website, where I am acting as UI/UX designer,
+                        is under construction, currently protected by the NDA. I
+                        promise to show it here later, when there is permission from
+                        the copyright holders.
+                    </p>
+                </div>
+            </div>
+
+            <div class="po-pizza-section position-relative">
+                <div class="po-pizza-section-divider position-absolute"></div>
+                <div class="po-pizza-section-wrap po-pizza-section-wrap-last">
+                    <video
+                        ref="videoRef"
+                        class="po-pizza-section-img"
+                        autoplay
+                        loop
+                        muted
+                        src="../../assets/Kadabra_2.mp4"
+                    />
+                </div>
             </div>
         </div>
-
-        <div class="po-pizza-section position-relative">
-            <div class="po-pizza-section-divider position-absolute"></div>
-            <div class="po-pizza-section-wrap po-pizza-section-wrap-last">
-                <video
-                    ref="videoRef"
-                    class="po-pizza-section-img"
-                    autoplay
-                    loop
-                    muted
-                    src="../../assets/Kadabra_2.mp4"
-                />
-            </div>
-        </div>
-    </div>
 </template>
 
 <script setup>

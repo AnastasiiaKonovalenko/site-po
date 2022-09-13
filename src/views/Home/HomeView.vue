@@ -1,5 +1,5 @@
 <script setup>
-import { computed, onMounted, ref } from 'vue';
+    import { computed, onMounted, ref } from 'vue';
 import { useLayoutFlagsStore } from '../../stores/layout-flags';
 import TheMenu from './components/TheMenu.vue';
 import MenuImgItem from './components/MenuImgItem.vue';
@@ -17,6 +17,7 @@ const { isBackgroundHidden, isProjectsMenuHidden } = storeToRefs(
 );
 
 import { useRoute } from 'vue-router';
+import TheLayout from '../components/TheLayout.vue';
 
 const route = useRoute();
 
@@ -43,14 +44,14 @@ const projects = computed(() => [
         path: 'logos',
         isVisible: route.path === '/' || route.path === '/logos',
         isActive: route.path === '/logos',
-        imgSrc: 'jaro_2.png',
+        imgSrc: 'jaro_2.jpg',
         header: 'Logos, Identity, mltipage layout samples',
         subheader: '',
     },
 ]);
 
 let isFabVisible = ref(false);
-
+let isCriticalCssLoading = ref(true);
 
 window.onscroll = function () {
     isFabVisible.value = window.scrollY > window.screen.height;
@@ -68,24 +69,28 @@ onMounted(() => {
     const setIsAboutMeDownloadedTime = route.path === '/' ? 3400 : 2600;
 
     setTimeout(() => {
-        setIsHeaderOnPortfolioDownloaded();
-    }, 1000);
-    setTimeout(() => {
-        setIsBackgroundHidden();
-    }, 1800);
+        isCriticalCssLoading.value = false;
 
-    setTimeout(() => {
-        setIsProjectsMenuHidden();
-    }, 2600);
+        setTimeout(() => {
+            setIsHeaderOnPortfolioDownloaded();
+        }, 1000);
+        setTimeout(() => {
+            setIsBackgroundHidden();
+        }, 1800);
 
-    setTimeout(() => {
-        setIsAboutMeDownloaded();
-    }, setIsAboutMeDownloadedTime);
+        setTimeout(() => {
+            setIsProjectsMenuHidden();
+        }, 2600);
+
+        setTimeout(() => {
+            setIsAboutMeDownloaded();
+        }, setIsAboutMeDownloadedTime);
+    }, 2500);
 });
 </script>
 
 <template>
-    <div class="po-main">
+    <TheLayout :is-loading="isCriticalCssLoading">
         <div class="po-head d-flex w-100 overflow-hidden">
             <TheMenu />
 
@@ -145,7 +150,6 @@ onMounted(() => {
         <TheFooter />
 
         <v-btn
-
             @click="scrollToTop"
             v-if="isFabVisible"
             class="fab-btn position-fixed"
@@ -153,7 +157,7 @@ onMounted(() => {
         >
             <v-icon color="white"> mdi-arrow-up </v-icon>
         </v-btn>
-    </div>
+    </TheLayout>
 </template>
 
 <style lang="scss" scoped>
@@ -174,12 +178,6 @@ onMounted(() => {
                 transition: all 0.8s ease-out;
             }
         }
-    }
-    &-main {
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-        overflow-x: hidden;
     }
 
     &-head {

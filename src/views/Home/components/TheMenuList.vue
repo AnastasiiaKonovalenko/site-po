@@ -31,7 +31,14 @@
                     @mouseenter="setMarkerTop(idx)"
                     @mouseleave="clearTimeoutHover"
                 >
-                    {{ item.title }}
+                    <a
+                        v-if="item.path === '/cv'"
+                        :href="cvLink"
+                        target="_blank"
+                        >{{ item.title }}</a
+                    >
+
+                    <span v-else> {{ item.title }} </span>
                 </li>
             </ul>
             <div class="d-flex justify-end">
@@ -133,6 +140,12 @@ export default {
             isContactsVisible: false,
         };
     },
+    computed: {
+        cvLink() {
+            return new URL(`../../../assets/cv/CV_OK.pdf`, import.meta.url)
+                .href;
+        },
+    },
     watch: {
         '$route.path': {
             handler: function () {
@@ -157,7 +170,6 @@ export default {
     methods: {
         goToPage(path) {
             if (path === '/cv') {
-                return;
             } else if (path === '/contacts') {
                 this.isContactsVisible = !this.isContactsVisible;
             } else {
@@ -293,5 +305,10 @@ li {
 .contacts-icon {
     width: min(get-vw(40px), 40px);
     height: min(get-vw(40px), 40px);
+}
+
+a {
+    font-style: unset;
+    text-decoration: unset;
 }
 </style>
