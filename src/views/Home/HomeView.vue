@@ -120,7 +120,7 @@ onMounted(() => {
                     :class="{
                         'project-header-hidden': !isHeaderProjectImageVisible || !isShowImageSrcInHeader,
                     }"
-                    class="project-header position-relative ml-custom-10"
+                    class="project-header position-relative"
                     style="z-index: 1"
                 >
                     <img
@@ -287,6 +287,7 @@ onMounted(() => {
     height: 50vh;
     max-height: min(get-vw(800px), 800px);
     transition: all 0.8s ease-out;
+    margin-left: min(get-vw(100px), 100px);
 
     &-hidden {
         overflow: hidden;

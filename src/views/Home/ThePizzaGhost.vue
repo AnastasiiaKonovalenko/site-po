@@ -266,7 +266,7 @@ const { isHeaderOnPortfolioDownloaded, isAboutMeDownloaded } = storeToRefs(
 
             &-divider {
                 top: 0;
-                left: -11%;
+                left: min(get-vw(-57px), -57px);
                 right: -100000px;
                 height: 1px;
                 background-color: var(--vt-c-grey-1);

@@ -7,7 +7,10 @@
         >
             <TheLoader />
         </div>
-        <div v-else class="position-relative flex-grow-1 d-flex flex-column">
+        <div
+            v-else
+            class="po-layout position-relative flex-grow-1 d-flex flex-column"
+        >
             <slot></slot>
         </div>
     </div>
@@ -27,4 +30,8 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.po-layout {
+    min-height: 100vh;
+}
+</style>
