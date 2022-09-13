@@ -11,7 +11,7 @@
 
         <div
             :class="{ 'po-hidden': !isAboutMeDownloaded }"
-            class="po-pizza-section position-relative"
+            class="po-pizza-section mt-0 position-relative"
         >
             <div class="po-pizza-section-divider position-absolute"/>
             <div class="po-pizza-section-wrap">

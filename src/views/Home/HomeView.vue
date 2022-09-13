@@ -26,6 +26,7 @@ const projects = computed(() => [
         path: 'pizza-ghost',
         isVisible: route.path === '/' || route.path === '/pizza-ghost',
         isActive: route.path === '/pizza-ghost',
+        showInHead: true,
         imgSrc: 'pizza_broshur.jpg',
         header: 'See Pizza Ghost project',
         subheader:
@@ -35,6 +36,7 @@ const projects = computed(() => [
         path: 'cadabra',
         isVisible: route.path === '/' || route.path === '/cadabra',
         isActive: route.path === '/cadabra',
+        showInHead: true,
         imgSrc: 'kadabra_broshur_22.jpg',
         header: 'Kadabra project',
         subheader:
@@ -44,6 +46,7 @@ const projects = computed(() => [
         path: 'logos',
         isVisible: route.path === '/' || route.path === '/logos',
         isActive: route.path === '/logos',
+        showInHead: false,
         imgSrc: 'jaro_2.jpg',
         header: 'Logos, Identity, mltipage layout samples',
         subheader: '',
@@ -57,6 +60,10 @@ const imageSrc = computed(() => {
     const src = projects.value.find((item) => item.isActive)?.imgSrc;
 
     return new URL(`../../assets/${src}`, import.meta.url).href;
+});
+
+const isShowImageSrcInHeader = computed(() => {
+    return projects.value.find((item) => item.isActive)?.showInHead;
 });
 
 window.onscroll = function () {
@@ -111,7 +118,7 @@ onMounted(() => {
 
                 <div
                     :class="{
-                        'project-header-hidden': !isHeaderProjectImageVisible,
+                        'project-header-hidden': !isHeaderProjectImageVisible || !isShowImageSrcInHeader,
                     }"
                     class="project-header position-relative ml-custom-10"
                     style="z-index: 1"
@@ -279,7 +286,6 @@ onMounted(() => {
 .project-header {
     height: 50vh;
     max-height: min(get-vw(800px), 800px);
-    min-height: min(get-vw(615px), 615px);
     transition: all 0.8s ease-out;
 
     &-hidden {
