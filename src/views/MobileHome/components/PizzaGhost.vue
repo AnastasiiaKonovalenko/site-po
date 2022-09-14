@@ -4,7 +4,7 @@
             <v-img
                 content-class="pizza-ghost-img flex-grow-1"
                 :src="imageSrc('pizza_broshur.jpg')"
-                aspect-ratio="1"
+                aspect-ratio="1.32"
                 contain
             ></v-img>
         </div>
@@ -53,7 +53,7 @@
                     <v-img
                         content-class="pizza-ghost-img flex-grow-1"
                         :src="imageSrc('cheese_hero-1.jpg')"
-                        aspect-ratio="1"
+                        aspect-ratio="1.32"
                         contain
                     ></v-img>
                 </div>
