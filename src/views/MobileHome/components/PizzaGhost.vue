@@ -1,26 +1,10 @@
 <template>
     <div class="pizza-ghost d-flex flex-column" id="pizza-ghost">
         <div class="d-flex">
-            <v-img
-                class="grey lighten-2"
-                content-class="pizza-ghost-img flex-grow-1"
-                :src="imageSrc('pizza_broshur.jpg')"
-                aspect-ratio="1.32"
-                contain
-            >
-                <template v-slot:placeholder>
-                    <v-row
-                        class="fill-height ma-0"
-                        align="center"
-                        justify="center"
-                    >
-                        <v-progress-circular
-                            indeterminate
-                            color="grey lighten-5"
-                        ></v-progress-circular>
-                    </v-row>
-                </template>
-            </v-img>
+            <TheProjectImage
+                src="pizza_broshur.jpg"
+                :aspect-ratio="1.32"
+            />
         </div>
 
         <div class="mt-0">
@@ -64,26 +48,10 @@
 
             <div>
                 <div class="d-flex">
-                    <v-img
-                        class="grey lighten-2"
-                        content-class="pizza-ghost-img flex-grow-1"
-                        :src="imageSrc('cheese_hero-1.jpg')"
-                        aspect-ratio="1.32"
-                        contain
-                    >
-                        <template v-slot:placeholder>
-                            <v-row
-                                class="fill-height ma-0"
-                                align="center"
-                                justify="center"
-                            >
-                                <v-progress-circular
-                                    indeterminate
-                                    color="grey lighten-5"
-                                ></v-progress-circular>
-                            </v-row>
-                        </template>
-                    </v-img>
+                    <TheProjectImage
+                        src="cheese_hero-1.jpg"
+                        :aspect-ratio="1.32"
+                    />
                 </div>
                 <h3 class="pizza-ghost-subheader">Ideation</h3>
                 <div class="pizza-ghost-info">
@@ -153,76 +121,29 @@
             <div>
                 <h4 class="pizza-ghost-subheader-2 mt-5">Application map</h4>
                 <div class="d-flex">
-                    <v-img
-                        class="grey lighten-2"
-                        content-class="pizza-ghost-img flex-grow-1"
-                        :src="imageSrc('cheese_hero-2.jpg')"
-                        aspect-ratio="1.32"
-                        contain
-                    >
-                        <template v-slot:placeholder>
-                            <v-row
-                                class="fill-height ma-0"
-                                align="center"
-                                justify="center"
-                            >
-                                <v-progress-circular
-                                    indeterminate
-                                    color="grey lighten-5"
-                                ></v-progress-circular>
-                            </v-row>
-                        </template>
-                    </v-img>
+                    <TheProjectImage
+                        src="cheese_hero-2.jpg"
+                        :aspect-ratio="1.32"
+                    />
                 </div>
 
                 <h4 class="pizza-ghost-subheader-2 my-5">Wireframe</h4>
 
                 <div class="d-flex">
-                    <v-img
-                        class="grey lighten-2"
-                        content-class="pizza-ghost-img flex-grow-1"
-                        :src="imageSrc('cheese_hero-3.jpg')"
-                        aspect-ratio="1.32"
-                        contain
-                    >
-                        <template v-slot:placeholder>
-                            <v-row
-                                class="fill-height ma-0"
-                                align="center"
-                                justify="center"
-                            >
-                                <v-progress-circular
-                                    indeterminate
-                                    color="grey lighten-5"
-                                ></v-progress-circular>
-                            </v-row>
-                        </template>
-                    </v-img>
+
+                    <TheProjectImage
+                        src="cheese_hero-3.jpg"
+                        :aspect-ratio="1.32"
+                    />
                 </div>
 
                 <h4 class="pizza-ghost-subheader-2 my-5">UI Kit</h4>
 
                 <div class="d-flex">
-                    <v-img
-                        class="grey lighten-2"
-                        content-class="pizza-ghost-img flex-grow-1"
-                        :src="imageSrc('cheese_hero-4.jpg')"
-                        aspect-ratio="1.55"
-                        contain
-                    >
-                        <template v-slot:placeholder>
-                            <v-row
-                                class="fill-height ma-0"
-                                align="center"
-                                justify="center"
-                            >
-                                <v-progress-circular
-                                    indeterminate
-                                    color="grey lighten-5"
-                                ></v-progress-circular>
-                            </v-row>
-                        </template>
-                    </v-img>
+                    <TheProjectImage
+                        src="cheese_hero-4.jpg"
+                        :aspect-ratio="1.55"
+                    />
                 </div>
 
                 <h3 class="pizza-ghost-subheader">Blueprint</h3>
@@ -280,26 +201,20 @@
 </template>
 
 <script setup>
-const imageSrc = (path) => {
-    return new URL(`../../../assets/${path}`, import.meta.url).href;
-};
+import TheProjectImage from './TheProjectImage.vue';
 </script>
 
 <style lang="scss" scoped>
 .pizza-ghost {
     max-width: 100vh;
 
-    &-img {
-        width: 100%;
-        height: fit-content;
-    }
-
     &-video {
         width: 150%;
-        height: fit-content;
+        height: 70vw;
 
         &-last {
             width: 100%;
+            height: 57vw;
         }
     }
 
