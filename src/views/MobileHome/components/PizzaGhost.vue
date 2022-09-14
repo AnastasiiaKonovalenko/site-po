@@ -2,11 +2,25 @@
     <div class="pizza-ghost d-flex flex-column" id="pizza-ghost">
         <div class="d-flex">
             <v-img
+                class="grey lighten-2"
                 content-class="pizza-ghost-img flex-grow-1"
                 :src="imageSrc('pizza_broshur.jpg')"
                 aspect-ratio="1.32"
                 contain
-            ></v-img>
+            >
+                <template v-slot:placeholder>
+                    <v-row
+                        class="fill-height ma-0"
+                        align="center"
+                        justify="center"
+                    >
+                        <v-progress-circular
+                            indeterminate
+                            color="grey lighten-5"
+                        ></v-progress-circular>
+                    </v-row>
+                </template>
+            </v-img>
         </div>
 
         <div class="mt-0">
@@ -51,11 +65,25 @@
             <div>
                 <div class="d-flex">
                     <v-img
+                        class="grey lighten-2"
                         content-class="pizza-ghost-img flex-grow-1"
                         :src="imageSrc('cheese_hero-1.jpg')"
                         aspect-ratio="1.32"
                         contain
-                    ></v-img>
+                    >
+                        <template v-slot:placeholder>
+                            <v-row
+                                class="fill-height ma-0"
+                                align="center"
+                                justify="center"
+                            >
+                                <v-progress-circular
+                                    indeterminate
+                                    color="grey lighten-5"
+                                ></v-progress-circular>
+                            </v-row>
+                        </template>
+                    </v-img>
                 </div>
                 <h3 class="pizza-ghost-subheader">Ideation</h3>
                 <div class="pizza-ghost-info">
@@ -122,114 +150,136 @@
                 </div>
             </div>
 
-            <!--        <div class="po-pizza-section position-relative">-->
-            <!--            <div class="po-pizza-section-divider position-absolute"></div>-->
-            <!--            <h4 class="po-pizza-section-img-subheader mt-custom-20 mb-custom-4">-->
-            <!--                Application map-->
-            <!--            </h4>-->
-            <!--            <div class="po-pizza-section-wrap">-->
-            <!--                <img-->
-            <!--                    src="../../assets/cheese_hero-2.jpg"-->
-            <!--                    class="po-pizza-section-img"-->
-            <!--                    :class="{ 'po-pizza-section-img-full': true }"-->
-            <!--                    alt="pizza-app"-->
-            <!--                />-->
-            <!--            </div>-->
-            <!--            <h4-->
-            <!--                class="po-pizza-section-img-subheader mt-custom-15 mb-custom-15"-->
-            <!--            >-->
-            <!--                Wireframe-->
-            <!--            </h4>-->
-            <!--            <div class="po-pizza-section-wrap">-->
-            <!--                <img-->
-            <!--                    src="../../assets/cheese_hero-3.jpg"-->
-            <!--                    class="po-pizza-section-img"-->
-            <!--                    :class="{ 'po-pizza-section-img-full': true }"-->
-            <!--                    alt="pizza-app"-->
-            <!--                />-->
-            <!--            </div>-->
+            <div>
+                <h4 class="pizza-ghost-subheader-2 mt-5">Application map</h4>
+                <div class="d-flex">
+                    <v-img
+                        class="grey lighten-2"
+                        content-class="pizza-ghost-img flex-grow-1"
+                        :src="imageSrc('cheese_hero-2.jpg')"
+                        aspect-ratio="1.32"
+                        contain
+                    >
+                        <template v-slot:placeholder>
+                            <v-row
+                                class="fill-height ma-0"
+                                align="center"
+                                justify="center"
+                            >
+                                <v-progress-circular
+                                    indeterminate
+                                    color="grey lighten-5"
+                                ></v-progress-circular>
+                            </v-row>
+                        </template>
+                    </v-img>
+                </div>
 
-            <!--            <h4-->
-            <!--                class="po-pizza-section-img-subheader mt-custom-15 mb-custom-15"-->
-            <!--            >-->
-            <!--                UI Kit-->
-            <!--            </h4>-->
-            <!--            <div class="po-pizza-section-wrap">-->
-            <!--                <img-->
-            <!--                    src="../../assets/cheese_hero-4.jpg"-->
-            <!--                    class="po-pizza-section-img"-->
-            <!--                    :class="{ 'po-pizza-section-img-full': true }"-->
-            <!--                    alt="pizza-app"-->
-            <!--                />-->
-            <!--            </div>-->
+                <h4 class="pizza-ghost-subheader-2 my-5">Wireframe</h4>
 
-            <!--            <h3 class="po-pizza-section-header">Blueprint</h3>-->
+                <div class="d-flex">
+                    <v-img
+                        class="grey lighten-2"
+                        content-class="pizza-ghost-img flex-grow-1"
+                        :src="imageSrc('cheese_hero-3.jpg')"
+                        aspect-ratio="1.32"
+                        contain
+                    >
+                        <template v-slot:placeholder>
+                            <v-row
+                                class="fill-height ma-0"
+                                align="center"
+                                justify="center"
+                            >
+                                <v-progress-circular
+                                    indeterminate
+                                    color="grey lighten-5"
+                                ></v-progress-circular>
+                            </v-row>
+                        </template>
+                    </v-img>
+                </div>
 
-            <!--            <p class="po-pizza-section-p mt-custom-3 d-flex flex-column">-->
-            <!--                <span>-->
-            <!--                    Preliminary design work included schematics, sketches, and a-->
-            <!--                    warframe to better understand the content and operation of-->
-            <!--                    the future prototype. The UI kit also became a prototype-->
-            <!--                    component library.-->
-            <!--                </span>-->
-            <!--                <span>-->
-            <!--                    The idea of a more moderate and less aggressive color scheme-->
-            <!--                    than that used in the company's products before has been put-->
-            <!--                    forward. When it comes to food, the more comfortable, calm,-->
-            <!--                    “home” feeling of color psychology is helpful. Partial-->
-            <!--                    departure from the corporate set of colors meanwhile-->
-            <!--                    maintains the necessary tonal contrast.-->
-            <!--                </span>-->
-            <!--            </p>-->
-            <!--        </div>-->
+                <h4 class="pizza-ghost-subheader-2 my-5">UI Kit</h4>
 
-            <!--        <div class="po-pizza-section position-relative">-->
-            <!--            <div class="po-pizza-section-divider position-absolute"></div>-->
-            <!--            <div class="po-pizza-section-wrap">-->
-            <!--                <div-->
-            <!--                    class="po-pizza-section-img"-->
-            <!--                    :class="{ 'po-pizza-section-img-full': true }"-->
-            <!--                ></div>-->
-            <!--            </div>-->
-            <!--            <h3 class="po-pizza-section-header">Background</h3>-->
-            <!--            <div class="po-pizza-section-info">-->
-            <!--                <p class="po-pizza-section-p">-->
-            <!--                    The result of the work was a functional prototype that-->
-            <!--                    simulates the main part of the user journey for the-->
-            <!--                    application. A beautiful and functional design is attractive-->
-            <!--                    to the user, distinguishes the business from competitors.-->
-            <!--                </p>-->
+                <div class="d-flex">
+                    <v-img
+                        class="grey lighten-2"
+                        content-class="pizza-ghost-img flex-grow-1"
+                        :src="imageSrc('cheese_hero-4.jpg')"
+                        aspect-ratio="1.55"
+                        contain
+                    >
+                        <template v-slot:placeholder>
+                            <v-row
+                                class="fill-height ma-0"
+                                align="center"
+                                justify="center"
+                            >
+                                <v-progress-circular
+                                    indeterminate
+                                    color="grey lighten-5"
+                                ></v-progress-circular>
+                            </v-row>
+                        </template>
+                    </v-img>
+                </div>
 
-            <!--                <p class="po-pizza-section-p mt-custom-3">-->
-            <!--                    <a-->
-            <!--                        class="po-pizza-section-link"-->
-            <!--                        target="_blank"-->
-            <!--                        href="https://www.figma.com/proto/b3faQ9asyb9JvSEOyuvT1k/Pizza-Ghost-app?node-id=121%3A924&scaling=scale-down&page-id=0%3A1&starting-point-node-id=10%3A38"-->
-            <!--                    >-->
-            <!--                        You can evaluate the work of the prototype at this link-->
-            <!--                    </a>-->
-            <!--                </p>-->
-            <!--            </div>-->
-            <!--        </div>-->
+                <h3 class="pizza-ghost-subheader">Blueprint</h3>
 
-            <!--        <div class="po-pizza-section position-relative">-->
-            <!--            <div class="po-pizza-section-divider position-absolute"></div>-->
-            <!--            <div class="po-pizza-section-wrap po-pizza-section-wrap-last">-->
-            <!--                <video-->
-            <!--                    ref="videoRef"-->
-            <!--                    class="po-pizza-section-img"-->
-            <!--                    autoplay-->
-            <!--                    loop-->
-            <!--                    muted-->
-            <!--                    src="../../assets/PizzaGhost.mp4"-->
-            <!--                />-->
-            <!--            </div>-->
+                <p class="pizza-ghost-p mt-3 d-flex flex-column">
+                    <span>
+                        Preliminary design work included schematics, sketches,
+                        and a warframe to better understand the content and
+                        operation of the future prototype. The UI kit also
+                        became a prototype component library.
+                    </span>
+                    <span>
+                        The idea of a more moderate and less aggressive color
+                        scheme than that used in the company's products before
+                        has been put forward. When it comes to food, the more
+                        comfortable, calm, “home” feeling of color psychology is
+                        helpful. Partial departure from the corporate set of
+                        colors meanwhile maintains the necessary tonal contrast.
+                    </span>
+                </p>
+            </div>
+
+            <div>
+                <h3 class="pizza-ghost-subheader">Prototype</h3>
+                <p class="pizza-ghost-p mt-3">
+                    The result of the work was a functional prototype that
+                    simulates the main part of the user journey for the
+                    application. A beautiful and functional design is attractive
+                    to the user, distinguishes the business from competitors.
+                </p>
+
+                <p class="pizza-ghost-p mt-3">
+                    <a
+                        class="pizza-ghost-link"
+                        target="_blank"
+                        href="https://www.figma.com/proto/b3faQ9asyb9JvSEOyuvT1k/Pizza-Ghost-app?node-id=121%3A924&scaling=scale-down&page-id=0%3A1&starting-point-node-id=10%3A38"
+                    >
+                        You can evaluate the work of the prototype at this link
+                    </a>
+                </p>
+            </div>
+
+            <div class="d-flex justify-center my-11">
+                <video
+                    ref="videoRef"
+                    class="pizza-ghost-video pizza-ghost-video-last"
+                    autoplay
+                    loop
+                    muted
+                    src="../../../assets/PizzaGhost.mp4"
+                />
+            </div>
         </div>
     </div>
 </template>
 
 <script setup>
-
 const imageSrc = (path) => {
     return new URL(`../../../assets/${path}`, import.meta.url).href;
 };
@@ -247,6 +297,10 @@ const imageSrc = (path) => {
     &-video {
         width: 150%;
         height: fit-content;
+
+        &-last {
+            width: 100%;
+        }
     }
 
     &-header {
