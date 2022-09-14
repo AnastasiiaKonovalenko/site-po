@@ -4,6 +4,7 @@
         <TheMenuList :toggleMobileMenu="toggleMobileMenu" />
         <AboutMe />
         <PizzaGhost class="mt-11" />
+        <TheFooter />
     </TheLayout>
 </template>
 
@@ -13,6 +14,7 @@ import TheMobileHeader from './components/TheMobileHeader.vue';
 import TheMenuList from './components/TheMenuList.vue';
 import AboutMe from './AboutMe.vue';
 import PizzaGhost from './components/PizzaGhost.vue';
+import TheFooter from './components/TheFooter.vue';
 import { ref } from 'vue';
 const {
     setIsHeaderOnPortfolioDownloaded,
