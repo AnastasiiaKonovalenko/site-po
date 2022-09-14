@@ -2,6 +2,7 @@
     <TheLayout :is-loading="isCriticalCssLoading">
         <TheMobileHeader :isBackgroundHidden="isBackgroundHidden" />
         <TheMenuList :toggleMobileMenu="toggleMobileMenu" />
+        <AboutMe />
     </TheLayout>
 </template>
 
@@ -24,6 +25,7 @@ import { useRoute } from 'vue-router';
 import { onMounted } from 'vue';
 import { useLayoutFlagsStore } from '../../stores/layout-flags';
 import TheMenuList from './components/TheMenuList.vue';
+import AboutMe from './AboutMe.vue';
 
 const route = useRoute();
 
