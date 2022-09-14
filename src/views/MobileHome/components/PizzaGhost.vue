@@ -28,7 +28,7 @@
 
             <h3 class="pizza-ghost-subheader">Background</h3>
 
-            <div class="pizza-ghost-info">
+            <div class="pizza-ghost-info mb-11">
                 <p class="pizza-ghost-p">
                     It was a restaurant chain in Dubai that described itself as:
                     "PizzaGhost are the most Dubai's unique & reliable pizza
@@ -57,7 +57,7 @@
                         contain
                     ></v-img>
                 </div>
-                <h3 class="pizza-ghost-subheader mt-0">Ideation</h3>
+                <h3 class="pizza-ghost-subheader">Ideation</h3>
 <!--                <div class="po-pizza-section-info">-->
 <!--                    <p class="po-pizza-section-p">-->
 <!--                        The product idea is the result of logical reasoning-->
@@ -267,7 +267,7 @@ const imageSrc = (path) => {
         font-family: 'Cinzel-Regular', serif;
         font-size: 20px;
         line-height: 100.9%;
-        margin: 10px 70px 70px 70px;
+        margin: 44px 70px 70px 70px;
         color: black;
     }
 

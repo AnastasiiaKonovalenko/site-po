@@ -3,7 +3,7 @@
         <TheMobileHeader :isBackgroundHidden="isBackgroundHidden" />
         <TheMenuList :toggleMobileMenu="toggleMobileMenu" />
         <AboutMe />
-        <PizzaGhost />
+        <PizzaGhost class="mt-11" />
     </TheLayout>
 </template>
 
