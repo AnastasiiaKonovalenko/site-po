@@ -6,6 +6,7 @@ export const useLayoutFlagsStore = defineStore('counter', {
         isAboutMeDownloaded: false,
         isBackgroundHidden: true,
         isProjectsMenuHidden: true,
+        isMobileMenuVisible: false
     }),
     getters: {},
     actions: {
@@ -21,5 +22,8 @@ export const useLayoutFlagsStore = defineStore('counter', {
         setIsProjectsMenuHidden() {
             this.isProjectsMenuHidden = false;
         },
+        toggleMobileMenu() {
+            this.isMobileMenuVisible = !this.isMobileMenuVisible;
+        }
     },
 });

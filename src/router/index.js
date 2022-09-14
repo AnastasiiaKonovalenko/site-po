@@ -4,6 +4,7 @@ import TheMenuWithPoint from '../views/Home/AboutMe.vue';
 import ThePizzaGhost from '../views/Home/ThePizzaGhost.vue';
 import Cadabra from '../views/Home/TheCadabra.vue';
 import Logos from '../views/Home/TheLogos.vue';
+import MobileHome from '../views/MobileHome/MobileHomeView.vue';
 
 const router = createRouter({
     history: createWebHashHistory(),
@@ -34,6 +35,12 @@ const router = createRouter({
                 },
             ],
         },
+        {
+            path: '/mobile',
+            name: 'mobile-home',
+            component: MobileHome,
+            children: [],
+        }
     ],
     scrollBehavior() {
         document.getElementById('app').scrollIntoView({ behavior: 'smooth' });
