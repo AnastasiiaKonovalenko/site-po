@@ -8,7 +8,7 @@
                 target="_blank"
                 href="mailto:womkad@gmail.com"
             >
-                <TheMail />
+                <TheMail class="z-index-1" />
             </a>
         </li>
         <li class="contacts-icon ml-4 rounded-circle">
@@ -17,7 +17,7 @@
                 target="_blank"
                 href="https://wa.me/+380972815576"
             >
-                <TheWatsapp />
+                <TheWatsapp class="z-index-1" />
             </a>
         </li>
         <li class="contacts-icon ml-4 rounded-circle">
@@ -26,7 +26,7 @@
                 target="_blank"
                 href="https://www.linkedin.com/in/olha-/"
             >
-                <TheLinkedin />
+                <TheLinkedin class="z-index-1" />
             </a>
         </li>
         <li class="contacts-icon ml-4 rounded-circle">
@@ -35,7 +35,7 @@
                 target="_blank"
                 href="tel:+37062527439"
             >
-                <TheTelephone />
+                <TheTelephone class="z-index-1" />
             </a>
         </li>
     </ul>
@@ -54,5 +54,9 @@ import TheWatsapp from '../../components/icons/TheWatsapp.vue';
     padding: 8px;
     width: 40px;
     height: 40px;
+}
+
+.z-index-1 {
+    z-index: 1;
 }
 </style>

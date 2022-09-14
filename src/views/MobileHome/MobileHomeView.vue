@@ -3,12 +3,16 @@
         <TheMobileHeader :isBackgroundHidden="isBackgroundHidden" />
         <TheMenuList :toggleMobileMenu="toggleMobileMenu" />
         <AboutMe />
+        <PizzaGhost />
     </TheLayout>
 </template>
 
 <script setup>
 import TheLayout from '../components/TheLayout.vue';
 import TheMobileHeader from './components/TheMobileHeader.vue';
+import TheMenuList from './components/TheMenuList.vue';
+import AboutMe from './AboutMe.vue';
+import PizzaGhost from './components/PizzaGhost.vue';
 import { ref } from 'vue';
 const {
     setIsHeaderOnPortfolioDownloaded,
@@ -17,15 +21,11 @@ const {
     setIsProjectsMenuHidden,
 } = useLayoutFlagsStore();
 import { storeToRefs } from 'pinia';
-const { isBackgroundHidden, toggleMobileMenu, isProjectsMenuHidden } = storeToRefs(
-    useLayoutFlagsStore()
-);
-
+const { isBackgroundHidden, toggleMobileMenu, isProjectsMenuHidden } =
+    storeToRefs(useLayoutFlagsStore());
 import { useRoute } from 'vue-router';
 import { onMounted } from 'vue';
 import { useLayoutFlagsStore } from '../../stores/layout-flags';
-import TheMenuList from './components/TheMenuList.vue';
-import AboutMe from './AboutMe.vue';
 
 const route = useRoute();
 
