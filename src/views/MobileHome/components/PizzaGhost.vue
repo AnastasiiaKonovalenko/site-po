@@ -1,5 +1,5 @@
 <template>
-    <div class="pizza-ghost d-flex flex-column" id="pizza-ghost">
+    <div class="project d-flex flex-column" id="pizza-ghost">
         <div class="d-flex">
             <TheProjectImage
                 src="pizza_broshur.jpg"
@@ -8,7 +8,7 @@
         </div>
 
         <div class="mt-0">
-            <h2 class="pizza-ghost-header">
+            <h2 class="project-header">
                 Application concept for ordering customized pizza and branding
                 corporate booklet
             </h2>
@@ -16,30 +16,31 @@
             <div class="d-flex justify-center">
                 <video
                     ref="videoRef"
-                    class="pizza-ghost-video"
+                    class="project-video"
                     autoplay
+                    playsinline
                     loop
                     muted
                     src="../../../assets/PizzaGhostApp.mp4"
                 />
             </div>
 
-            <h3 class="pizza-ghost-subheader">Background</h3>
+            <h3 class="project-subheader">Background</h3>
 
-            <div class="pizza-ghost-info mb-11">
-                <p class="pizza-ghost-p">
+            <div class="project-info mb-11">
+                <p class="project-p">
                     It was a restaurant chain in Dubai that described itself as:
                     "PizzaGhost are the most Dubai's unique & reliable pizza
                     delivery service".
                 </p>
 
-                <p class="pizza-ghost-p mt-3">
+                <p class="project-p mt-3">
                     Once, a few years ago, I made a presentation booklet for
                     them (you can see a few spreads of this publication below)
                     and all this time, it seems that they were doing very well.
                 </p>
 
-                <p class="pizza-ghost-p mt-3">
+                <p class="project-p mt-3">
                     However, being "the most Dubai's unique & reliable" means
                     being one of the market leaders and building your marketing
                     even more strong to beat the competition unconditionally...
@@ -53,47 +54,47 @@
                         :aspect-ratio="1.32"
                     />
                 </div>
-                <h3 class="pizza-ghost-subheader">Ideation</h3>
-                <div class="pizza-ghost-info">
-                    <p class="pizza-ghost-p">
+                <h3 class="project-subheader">Ideation</h3>
+                <div class="project-info">
+                    <p class="project-p">
                         The product idea is the result of logical reasoning
                         based on knowledge in the field of marketing and
                         psychology
                     </p>
 
-                    <h4 class="pizza-ghost-subheader-2 mt-5">
+                    <h4 class="project-subheader-2 mt-5">
                         Business needs:
                     </h4>
-                    <ul class="pizza-ghost-list mt-3">
-                        <li class="pizza-ghost-list-item mt-3">
+                    <ul class="project-list mt-3">
+                        <li class="project-list-item mt-3">
                             maintain a leading position in the market
                         </li>
-                        <li class="pizza-ghost-list-item mt-3">
+                        <li class="project-list-item mt-3">
                             increase the company's income by increasing interest
                             in the product
                         </li>
-                        <li class="pizza-ghost-list-item mt-3">
+                        <li class="project-list-item mt-3">
                             attract a new user audience
                         </li>
                     </ul>
 
-                    <h4 class="pizza-ghost-subheader-2 mt-5">Users needs:</h4>
-                    <ul class="pizza-ghost-list mt-3">
-                        <li class="pizza-ghost-list-item mt-3">
+                    <h4 class="project-subheader-2 mt-5">Users needs:</h4>
+                    <ul class="project-list mt-3">
+                        <li class="project-list-item mt-3">
                             eat delicious customized pizza without leaving home
                             or office
                         </li>
-                        <li class="pizza-ghost-list-item mt-3">
+                        <li class="project-list-item mt-3">
                             to be a user of a well-known product that can
                             flexibly adapt to the wishes of a client
                         </li>
-                        <li class="pizza-ghost-list-item mt-3">
+                        <li class="project-list-item mt-3">
                             declare in social networks about his creative
                             experience and involvement in trend
                         </li>
                     </ul>
 
-                    <p class="pizza-ghost-p mt-5">
+                    <p class="project-p mt-5">
                         The consumer psychology is characterized by the
                         so-called "ikea effect". The consumer is willing to pay
                         more for what he does himself. Also, the consumer has a
@@ -105,13 +106,13 @@
                         social networks.
                     </p>
 
-                    <p class="pizza-ghost-p mt-3">
+                    <p class="project-p mt-3">
                         Bright and juicy high-quality images of food and fire
                         increase appetite and psychological comfort, allowing
                         the user to buy more and return to the product again.
                     </p>
 
-                    <p class="pizza-ghost-p mt-3">
+                    <p class="project-p mt-3">
                         As a result, the business receives an organic expansion
                         of the audience, increases profits, fame and prestige.
                     </p>
@@ -119,7 +120,7 @@
             </div>
 
             <div>
-                <h4 class="pizza-ghost-subheader-2 mt-5">Application map</h4>
+                <h4 class="project-subheader-2 mt-5">Application map</h4>
                 <div class="d-flex">
                     <TheProjectImage
                         src="cheese_hero-2.jpg"
@@ -127,7 +128,7 @@
                     />
                 </div>
 
-                <h4 class="pizza-ghost-subheader-2 my-5">Wireframe</h4>
+                <h4 class="project-subheader-2 my-5">Wireframe</h4>
 
                 <div class="d-flex">
 
@@ -137,7 +138,7 @@
                     />
                 </div>
 
-                <h4 class="pizza-ghost-subheader-2 my-5">UI Kit</h4>
+                <h4 class="project-subheader-2 my-5">UI Kit</h4>
 
                 <div class="d-flex">
                     <TheProjectImage
@@ -146,9 +147,9 @@
                     />
                 </div>
 
-                <h3 class="pizza-ghost-subheader">Blueprint</h3>
+                <h3 class="project-subheader">Blueprint</h3>
 
-                <p class="pizza-ghost-p mt-3 d-flex flex-column">
+                <p class="project-p mt-3 d-flex flex-column">
                     <span>
                         Preliminary design work included schematics, sketches,
                         and a warframe to better understand the content and
@@ -167,17 +168,17 @@
             </div>
 
             <div>
-                <h3 class="pizza-ghost-subheader">Prototype</h3>
-                <p class="pizza-ghost-p mt-3">
+                <h3 class="project-subheader">Prototype</h3>
+                <p class="project-p mt-3">
                     The result of the work was a functional prototype that
                     simulates the main part of the user journey for the
                     application. A beautiful and functional design is attractive
                     to the user, distinguishes the business from competitors.
                 </p>
 
-                <p class="pizza-ghost-p mt-3">
+                <p class="project-p mt-3">
                     <a
-                        class="pizza-ghost-link"
+                        class="project-link"
                         target="_blank"
                         href="https://www.figma.com/proto/b3faQ9asyb9JvSEOyuvT1k/Pizza-Ghost-app?node-id=121%3A924&scaling=scale-down&page-id=0%3A1&starting-point-node-id=10%3A38"
                     >
@@ -186,13 +187,14 @@
                 </p>
             </div>
 
-            <div class="d-flex justify-center my-11">
+            <div class="d-flex justify-center mt-11">
                 <video
                     ref="videoRef"
-                    class="pizza-ghost-video pizza-ghost-video-last"
+                    class="project-video project-video-last"
                     autoplay
                     loop
                     muted
+                    playsinline
                     src="../../../assets/PizzaGhost.mp4"
                 />
             </div>
@@ -205,12 +207,13 @@ import TheProjectImage from './TheProjectImage.vue';
 </script>
 
 <style lang="scss" scoped>
-.pizza-ghost {
+.project {
     max-width: 100vh;
 
     &-video {
-        width: 150%;
-        height: 70vw;
+        width: 265%;
+        height: 150vw;
+        max-height: 100vh;
 
         &-last {
             width: 100%;
