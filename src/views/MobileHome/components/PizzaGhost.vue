@@ -58,82 +58,68 @@
                     ></v-img>
                 </div>
                 <h3 class="pizza-ghost-subheader">Ideation</h3>
-<!--                <div class="po-pizza-section-info">-->
-<!--                    <p class="po-pizza-section-p">-->
-<!--                        The product idea is the result of logical reasoning-->
-<!--                        based on knowledge in the field of marketing and-->
-<!--                        psychology-->
-<!--                    </p>-->
+                <div class="pizza-ghost-info">
+                    <p class="pizza-ghost-p">
+                        The product idea is the result of logical reasoning
+                        based on knowledge in the field of marketing and
+                        psychology
+                    </p>
 
-<!--                    <h4 class="po-pizza-section-subheader mt-custom-5">-->
-<!--                        Business needs:-->
-<!--                    </h4>-->
-<!--                    <ul class="po-pizza-section-list mt-custom-3">-->
-<!--                        <li-->
-<!--                            class="po-pizza-section-list-item position-relative mt-custom-3"-->
-<!--                        >-->
-<!--                            maintain a leading position in the market-->
-<!--                        </li>-->
-<!--                        <li-->
-<!--                            class="po-pizza-section-list-item position-relative mt-custom-3"-->
-<!--                        >-->
-<!--                            increase the company's income by increasing interest-->
-<!--                            in the product-->
-<!--                        </li>-->
-<!--                        <li-->
-<!--                            class="po-pizza-section-list-item position-relative mt-custom-3"-->
-<!--                        >-->
-<!--                            attract a new user audience-->
-<!--                        </li>-->
-<!--                    </ul>-->
+                    <h4 class="pizza-ghost-subheader-2 mt-5">
+                        Business needs:
+                    </h4>
+                    <ul class="pizza-ghost-list mt-3">
+                        <li class="pizza-ghost-list-item mt-3">
+                            maintain a leading position in the market
+                        </li>
+                        <li class="pizza-ghost-list-item mt-3">
+                            increase the company's income by increasing interest
+                            in the product
+                        </li>
+                        <li class="pizza-ghost-list-item mt-3">
+                            attract a new user audience
+                        </li>
+                    </ul>
 
-<!--                    <h4 class="po-pizza-section-subheader mt-custom-5">-->
-<!--                        Users needs:-->
-<!--                    </h4>-->
-<!--                    <ul class="po-pizza-section-list mt-custom-3">-->
-<!--                        <li-->
-<!--                            class="po-pizza-section-list-item position-relative mt-custom-3"-->
-<!--                        >-->
-<!--                            eat delicious customized pizza without leaving home-->
-<!--                            or office-->
-<!--                        </li>-->
-<!--                        <li-->
-<!--                            class="po-pizza-section-list-item position-relative mt-custom-3"-->
-<!--                        >-->
-<!--                            to be a user of a well-known product that can-->
-<!--                            flexibly adapt to the wishes of a client-->
-<!--                        </li>-->
-<!--                        <li-->
-<!--                            class="po-pizza-section-list-item position-relative mt-custom-3"-->
-<!--                        >-->
-<!--                            declare in social networks about his creative-->
-<!--                            experience and involvement in trend-->
-<!--                        </li>-->
-<!--                    </ul>-->
+                    <h4 class="pizza-ghost-subheader-2 mt-5">Users needs:</h4>
+                    <ul class="pizza-ghost-list mt-3">
+                        <li class="pizza-ghost-list-item mt-3">
+                            eat delicious customized pizza without leaving home
+                            or office
+                        </li>
+                        <li class="pizza-ghost-list-item mt-3">
+                            to be a user of a well-known product that can
+                            flexibly adapt to the wishes of a client
+                        </li>
+                        <li class="pizza-ghost-list-item mt-3">
+                            declare in social networks about his creative
+                            experience and involvement in trend
+                        </li>
+                    </ul>
 
-<!--                    <p class="po-pizza-section-p mt-custom-11">-->
-<!--                        The consumer psychology is characterized by the-->
-<!--                        so-called "ikea effect". The consumer is willing to pay-->
-<!--                        more for what he does himself. Also, the consumer has a-->
-<!--                        psychological need to show the result of his activities-->
-<!--                        to others. The product combines the satisfaction of-->
-<!--                        these user needs, allowing you to design a pizza-->
-<!--                        yourself and save the recipe and photo in the-->
-<!--                        application's gallery, and then share the result on-->
-<!--                        social networks.-->
-<!--                    </p>-->
+                    <p class="pizza-ghost-p mt-5">
+                        The consumer psychology is characterized by the
+                        so-called "ikea effect". The consumer is willing to pay
+                        more for what he does himself. Also, the consumer has a
+                        psychological need to show the result of his activities
+                        to others. The product combines the satisfaction of
+                        these user needs, allowing you to design a pizza
+                        yourself and save the recipe and photo in the
+                        application's gallery, and then share the result on
+                        social networks.
+                    </p>
 
-<!--                    <p class="po-pizza-section-p mt-custom-3">-->
-<!--                        Bright and juicy high-quality images of food and fire-->
-<!--                        increase appetite and psychological comfort, allowing-->
-<!--                        the user to buy more and return to the product again.-->
-<!--                    </p>-->
+                    <p class="pizza-ghost-p mt-3">
+                        Bright and juicy high-quality images of food and fire
+                        increase appetite and psychological comfort, allowing
+                        the user to buy more and return to the product again.
+                    </p>
 
-<!--                    <p class="po-pizza-section-p mt-custom-3">-->
-<!--                        As a result, the business receives an organic expansion-->
-<!--                        of the audience, increases profits, fame and prestige.-->
-<!--                    </p>-->
-<!--                </div>-->
+                    <p class="pizza-ghost-p mt-3">
+                        As a result, the business receives an organic expansion
+                        of the audience, increases profits, fame and prestige.
+                    </p>
+                </div>
             </div>
 
             <!--        <div class="po-pizza-section position-relative">-->
@@ -265,19 +251,25 @@ const imageSrc = (path) => {
 
     &-header {
         font-family: 'Cinzel-Regular', serif;
-        font-size: 20px;
+        font-size: 24px;
         line-height: 100.9%;
-        margin: 44px 70px 70px 70px;
+        margin: 44px 44px 70px 70px;
         color: black;
     }
 
     &-subheader {
         text-align: center;
         font-family: 'Cinzel-Regular', serif;
-        font-size: 20px;
+        font-size: 24px;
         line-height: 100.9%;
         margin: 44px auto 44px auto;
         color: var(--vt-c-grey-1);
+
+        &-2 {
+            color: var(--vt-c-grey-1);
+            font-size: 16px;
+            margin: 0 44px;
+        }
     }
 
     &-p {
@@ -286,6 +278,28 @@ const imageSrc = (path) => {
         font-size: 12px;
         line-height: 140%;
         margin: 0 44px;
+    }
+
+    &-list {
+        margin: 12px 44px;
+        &-item {
+            position: relative;
+            padding-left: 16px;
+            font-family: 'RedHatDisplay-Regular', serif;
+            color: var(--vt-c-grey-1);
+            font-size: 12px;
+
+            &:before {
+                position: absolute;
+                border-radius: 50%;
+                content: '';
+                background-color: var(--vt-c-grey-1);
+                height: 3px;
+                width: 3px;
+                top: calc(50% - 1px);
+                left: 0;
+            }
+        }
     }
 }
 </style>
