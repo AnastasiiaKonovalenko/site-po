@@ -6,7 +6,7 @@ export const useLayoutFlagsStore = defineStore('counter', {
         isAboutMeDownloaded: false,
         isBackgroundHidden: true,
         isProjectsMenuHidden: true,
-        isMobileMenuVisible: false
+        isMobileMenuVisible: false,
     }),
     getters: {},
     actions: {

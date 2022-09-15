@@ -1,5 +1,8 @@
 <template>
-    <div class="d-flex flex-column ml-10">
+    <div
+        :class="{ visible: isMobileMenuVisible, hidden: !isMobileMenuVisible }"
+        class="d-flex flex-column ml-10"
+    >
         <ul class="po-list position-relative">
             <li
                 v-for="(item, idx) in menuItems"
@@ -8,7 +11,7 @@
             >
                 <a
                     class="h-100 z-index-1 d-flex align-center"
-                    v-if="item.path === '/cv'"
+                    v-if="item.id === 'cv'"
                     :href="cvLink"
                     target="_blank"
                 >
@@ -18,13 +21,17 @@
                 <span
                     class="h-100 d-flex align-center"
                     v-else
-                    @click="goToPage(item.path)"
+                    @click="goToPage(item.id)"
                 >
                     {{ item.title }}
                 </span>
                 <TheContactsMenu
                     class="ml-4"
-                    v-if="isContactsVisible && idx === menuItems.length - 1"
+                    v-if="
+                        isContactsVisible &&
+                        isMobileMenuVisible &&
+                        idx === menuItems.length - 1
+                    "
                 />
             </li>
         </ul>
@@ -32,52 +39,53 @@
 </template>
 
 <script setup>
-import { computed, ref } from 'vue';
+    import { computed, ref } from 'vue';
 import TheContactsMenu from './TheContactsMenu.vue';
 
 defineProps({
     isMobileMenuVisible: Boolean,
 });
+
+const isContactsVisible  = ref(false)
 const menuItems = [
     {
         title: 'About me',
-        path: '/',
+        id: 'about-me',
     },
 
     {
         title: 'Pizza Ghost',
-        path: '/pizza-ghost',
+        id: 'pizza-ghost',
     },
     {
         title: 'Cadabra',
-        path: '/cadabra',
+        id: 'cadabra',
     },
     {
         title: 'Other',
-        path: '/logos',
+        id: 'logos',
     },
     {
         title: 'Download CV',
-        path: '/cv',
+        id: 'cv',
     },
     {
         title: 'Contacts',
-        path: '/contacts',
+        id: 'contacts',
     },
 ];
 const cvLink = computed(() => {
     return new URL(`../../../assets/cv/CV_OK.pdf`, import.meta.url).href;
 });
 
-let isContactsVisible = ref(false);
-
-const goToPage = (path) => {
-    if (path === '/cv') {
+const goToPage = (id) => {
+    if (id === 'cv') {
         return;
-    } else if (path === '/contacts') {
+    } else if (id === 'contacts') {
         isContactsVisible.value = !isContactsVisible.value;
     } else {
-        // this.$route.path !== path ? router.push(`${path}`) : true;
+        const el = document.getElementById(id);
+        el.scrollIntoView({ behavior: 'smooth' });
     }
 };
 </script>
@@ -85,11 +93,13 @@ const goToPage = (path) => {
 <style lang="scss" scoped>
 .po {
     &-list {
+        overflow: hidden;
         color: var(--vt-c-grey-1);
-        padding: 12px 0 12px 0;
-        margin: 8px 0 8px 0;
+        padding: 12px 0 0 0;
+        margin: 8px 0 0 0;
         height: max-content;
         z-index: 3;
+        transition: all 0.8s ease;
         &-item {
             height: 60px;
             cursor: pointer;
@@ -98,15 +108,15 @@ const goToPage = (path) => {
     }
 }
 
-.slide-fade-enter-active,
-.slide-fade-leave-active {
-    transition: all 0.5s ease;
+.visible {
+    max-height: 500px;
+    transition: all 0.8s ease-out;
 }
 
-.slide-fade-enter-from,
-.slide-fade-leave-to {
-    opacity: 0;
-    transform: translateY(100px);
+.hidden {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.8s ease-out;
 }
 
 a {

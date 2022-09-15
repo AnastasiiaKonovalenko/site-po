@@ -40,17 +40,33 @@
             </div>
         </div>
         <div class="po-mobile-header-name mt-5 ml-13">OLHA Kharytonova</div>
+
         <div
-            class="po-mobile-header-bottom-subtext mt-13 align-self-end mr-6 mb-10"
+            class="d-flex flex-grow-1 mt-13 align-self-end pr-6 pl-6 mb-10 justify-space-between align-end w-100"
         >
-            based in Vilnius, Lithuania
+            <v-btn
+                @click="toggleMobileMenu"
+                icon elevation="0" class="bg-transparent">
+                <VerticalDots v-if="!isMobileMenuVisible" class="z-index-1" />
+                <CloseIcon v-else class="z-index-1"/>
+            </v-btn>
+            <span class="po-mobile-header-bottom-subtext">
+                based in Vilnius, Lithuania
+            </span>
         </div>
     </div>
 </template>
 
 <script setup>
 import { computed } from 'vue';
-
+import VerticalDots from '../../components/icons/VerticalDots.vue';
+import { useLayoutFlagsStore } from '../../../stores/layout-flags';
+import CloseIcon from '../../components/icons/CloseIcon.vue';
+const { toggleMobileMenu } = useLayoutFlagsStore();
+import { storeToRefs } from 'pinia';
+const { isMobileMenuVisible } = storeToRefs(
+    useLayoutFlagsStore()
+);
 defineProps({
     isBackgroundHidden: Boolean,
 });
@@ -112,7 +128,7 @@ const imageSrc = computed(() => {
     &-bottom-subtext {
         font-size: 20px;
         line-height: 100.9%;
-        width: 109px;
+        max-width: 109px;
         z-index: 1;
     }
 }

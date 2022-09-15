@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h2 class="po-about-me-header mb-8 mx-2">Welcome to my portfolio</h2>
+        <h2 class="po-about-me-header pb-8 py-4 mx-2">Welcome to my portfolio</h2>
         <div>
             <TheProjectPreview
                 class="mb-2"
@@ -20,7 +20,7 @@
             />
         </div>
 
-        <div class="po-about-me-section flex-grow-1 mx-11 mt-11 pt-2">
+        <div id="about-me" class="po-about-me-section flex-grow-1 mx-11 mt-11 pt-2">
             <p class="po-about-me-bold mb-4">My name is Olga,</p>
 
             <p class="mb-4">
