@@ -26,7 +26,7 @@
                 target="_blank"
                 href="https://www.linkedin.com/in/olha-/"
             >
-                <TheLinkedin class="z-index-1" />
+                <BaseIcon :path="mdiLinkedin" type="mdi" />
             </a>
         </li>
         <li class="contacts-icon ml-4 rounded-circle">
@@ -44,8 +44,11 @@
 <script setup>
 import TheMail from '../../components/icons/TheMail.vue';
 import TheTelephone from '../../components/icons/TheTelephone.vue';
-import TheLinkedin from '../../components/icons/TheLinkedin.vue';
 import TheWatsapp from '../../components/icons/TheWatsapp.vue';
+import { mdiLinkedin } from '@mdi/js';
+import BaseIcon from '../../components/icons/BaseIcon.vue';
+
+console.log(mdiLinkedin);
 </script>
 
 <style scoped>
