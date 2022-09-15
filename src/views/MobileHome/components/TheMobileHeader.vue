@@ -7,16 +7,37 @@
             }"
             class="po-mobile-header-background"
         ></div>
-        <div class="po-mobile-header-top-subtext align-self-end mt-12 mb-1">
-            UI/UX, Identity, Editorial, Graphic,
-        </div>
         <div class="d-flex justify-space-between">
-            <img
-                class="po-mobile-header-avatar mr-2"
-                src="../../../assets/photo.png"
-                alt="this is me"
-            />
-            <h1 class="po-mobile-header-heading">PRODUCT DESIGNER</h1>
+            <div class="img">
+                <v-img
+                    width="162"
+                    class="grey lighten-2 mr-2"
+                    content-class="flex-grow-1"
+                    :src="imageSrc"
+                    :aspect-ratio="0.8"
+                >
+                    <template v-slot:placeholder>
+                        <v-row
+                            class="fill-height ma-0"
+                            align="center"
+                            justify="center"
+                        >
+                            <v-progress-circular
+                                indeterminate
+                                color="grey lighten-5"
+                            ></v-progress-circular>
+                        </v-row>
+                    </template>
+                </v-img>
+            </div>
+            <div class="z-index-1">
+                <div class="po-mobile-header-top-subtext align-self-end mt-12 mb-1">
+                    UI/UX, Identity, Editorial, Graphic,
+                </div>
+                <h1 class="po-mobile-header-heading">
+                    PRODUCT DESIGNER
+                </h1>
+            </div>
         </div>
         <div class="po-mobile-header-name mt-5 ml-13">OLHA Kharytonova</div>
         <div
@@ -28,8 +49,14 @@
 </template>
 
 <script setup>
+import { computed } from 'vue';
+
 defineProps({
     isBackgroundHidden: Boolean,
+});
+
+const imageSrc = computed(() => {
+    return new URL(`../../../assets/photo_mobile.jpg`, import.meta.url).href;
 });
 </script>
 
@@ -54,6 +81,7 @@ defineProps({
     }
 
     &-top-subtext {
+        color: var(--vt-c-grey-1);
         font-size: 30px;
         width: 155px;
         line-height: 130%;
@@ -61,18 +89,17 @@ defineProps({
     }
 
     &-avatar {
-        position: relative;
-        height: 185px;
-        object-fit: cover;
         margin-left: -30px;
         z-index: 1;
     }
 
     &-heading {
+        font-family: 'RedHatDisplay-Bold', serif;
+        color: var(--vt-c-grey-1);
         font-size: 35px;
         letter-spacing: 0.03em;
         line-height: 130%;
-        z-index: 1;
+        z-index: 7;
     }
 
     &-name {
@@ -88,5 +115,13 @@ defineProps({
         width: 109px;
         z-index: 1;
     }
+}
+
+.z-index-1 {
+    z-index: 1;
+}
+
+.img {
+    margin-top: 215px;
 }
 </style>

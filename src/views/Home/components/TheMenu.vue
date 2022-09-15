@@ -11,7 +11,7 @@ export default {
                 <div class="w">
                     <img
                         class="po-img"
-                        src="../../../assets/photo.png"
+                        src="../../../assets/photo.jpg"
                         alt="my_photo"
                     />
                 </div>

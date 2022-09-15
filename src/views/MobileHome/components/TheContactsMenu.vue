@@ -4,7 +4,7 @@
             class="contacts-icon d-flex justify-center align-center rounded-circle"
         >
             <a
-                class="d-flex justify-center align-center flex-grow-1"
+                class="d-flex justify-center align-center flex-grow-1 z-index-1"
                 target="_blank"
                 href="mailto:womkad@gmail.com"
             >
@@ -13,7 +13,7 @@
         </li>
         <li class="contacts-icon ml-4 rounded-circle">
             <a
-                class="d-flex justify-center align-center flex-grow-1"
+                class="d-flex justify-center align-center flex-grow-1 z-index-1"
                 target="_blank"
                 href="https://wa.me/+380972815576"
             >
@@ -22,7 +22,7 @@
         </li>
         <li class="contacts-icon ml-4 rounded-circle">
             <a
-                class="d-flex justify-center align-center flex-grow-1"
+                class="d-flex justify-center align-center flex-grow-1 z-index-1"
                 target="_blank"
                 href="https://www.linkedin.com/in/olha-/"
             >
@@ -31,7 +31,7 @@
         </li>
         <li class="contacts-icon ml-4 rounded-circle">
             <a
-                class="d-flex justify-center align-center flex-grow-1"
+                class="d-flex justify-center align-center flex-grow-1 z-index-1"
                 target="_blank"
                 href="tel:+37062527439"
             >

@@ -5,13 +5,23 @@
                 v-for="(item, idx) in menuItems"
                 :key="idx"
                 class="po-list-item d-flex align-center"
-                @click="goToPage(item.path)"
             >
-                <a v-if="item.path === '/cv'" :href="cvLink" target="_blank">
+                <a
+                    class="h-100 z-index-1 d-flex align-center"
+                    v-if="item.path === '/cv'"
+                    :href="cvLink"
+                    target="_blank"
+                >
                     {{ item.title }}
                 </a>
 
-                <span v-else> {{ item.title }} </span>
+                <span
+                    class="h-100 d-flex align-center"
+                    v-else
+                    @click="goToPage(item.path)"
+                >
+                    {{ item.title }}
+                </span>
                 <TheContactsMenu
                     class="ml-4"
                     v-if="isContactsVisible && idx === menuItems.length - 1"
@@ -100,7 +110,12 @@ const goToPage = (path) => {
 }
 
 a {
+    color: var(--vt-c-grey-1);
     text-decoration: none;
     font-style: unset;
+}
+
+.z-index-1 {
+    z-index: 1;
 }
 </style>
