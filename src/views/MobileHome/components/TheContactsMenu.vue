@@ -50,7 +50,7 @@ import TheWatsapp from '../../components/icons/TheWatsapp.vue';
 
 <style scoped>
 .contacts-icon {
-    background-color: black;
+    background-color: red;
     padding: 8px;
     width: 40px;
     height: 40px;
