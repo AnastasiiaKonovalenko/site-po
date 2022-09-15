@@ -4,6 +4,10 @@
         <TheMenuList :toggleMobileMenu="toggleMobileMenu" />
         <AboutMe />
         <PizzaGhost class="mt-11" />
+        <v-divider class="my-16 mx-6"></v-divider>
+        <TheCadabra />
+        <v-divider class="my-16 mx-6"></v-divider>
+        <TheLogos />
         <TheFooter />
     </TheLayout>
 </template>
@@ -15,6 +19,9 @@ import TheMenuList from './components/TheMenuList.vue';
 import AboutMe from './AboutMe.vue';
 import PizzaGhost from './components/PizzaGhost.vue';
 import TheFooter from './components/TheFooter.vue';
+import TheCadabra from './components/TheCadabra.vue';
+import TheLogos from './components/TheLogos.vue';
+
 import { ref } from 'vue';
 const {
     setIsHeaderOnPortfolioDownloaded,
