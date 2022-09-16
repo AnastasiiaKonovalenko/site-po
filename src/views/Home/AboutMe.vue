@@ -12,7 +12,7 @@
             class="po-about-me flex-grow-1 pt-custom-2"
             :class="{ 'po-hidden': !isAboutMeDownloaded }"
         >
-            <p class="po-about-me-bold mb-custom-11">My name is Olga,</p>
+            <p class="po-about-me-bold mb-custom-11">Hi, my name is Olga,</p>
 
             <p class="mb-custom-11">
                 I’m from Kyiv, Ukraine, however currently am located in Vilnius,

@@ -29,7 +29,7 @@
             id="about-me"
             class="po-about-me-section flex-grow-1 mx-11 mt-11 pt-2"
         >
-            <p class="po-about-me-bold mb-4">My name is Olga,</p>
+            <p class="po-about-me-bold mb-4">Hi, my name is Olga,</p>
 
             <p class="mb-4">
                 I’m from Kyiv, Ukraine, however currently am located in Vilnius,
