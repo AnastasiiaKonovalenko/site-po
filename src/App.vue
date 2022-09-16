@@ -9,17 +9,15 @@
 <script>
 export default {
     name: 'App',
-    data() {
-        return {
-            isMobile: false,
-        };
+    computed: {
+        isMobile() {
+            return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+                navigator.userAgent
+            );
+        },
     },
     beforeMount() {
-        if (
-            /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-                navigator.userAgent
-            )
-        ) {
+        if (this.isMobile) {
             this.$router.replace({ name: 'mobile-home' });
         }
     },

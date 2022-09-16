@@ -13,7 +13,7 @@
             :class="{ 'po-hidden': !isAboutMeDownloaded }"
             class="po-pizza-section mt-0 position-relative"
         >
-            <div class="po-pizza-section-divider position-absolute"/>
+            <div class="po-pizza-section-divider position-absolute" />
             <div class="po-pizza-section-wrap">
                 <video
                     ref="videoRef"
@@ -54,13 +54,15 @@
                 }"
                 class="po-pizza-section-divider position-absolute"
             ></div>
-            <div class="po-pizza-section-wrap">
-                <img
-                    src="../../assets/cheese_hero-1.jpg"
-                    class="po-pizza-section-img"
-                    :class="{ 'po-pizza-section-img-full': true }"
-                    alt="pizza-app"
-                />
+            <div class="po-pizza-section position-relative mt-0">
+                <div class="po-pizza-section-divider position-absolute"></div>
+                <div class="po-pizza-section-wrap">
+                    <TheVideo
+                        index="0"
+                        folder="pizza_presentation"
+                        :photosCount="3"
+                    />
+                </div>
             </div>
             <h3 class="po-pizza-section-header">Ideation</h3>
             <div class="po-pizza-section-info">
@@ -248,6 +250,7 @@
 <script setup>
 import { useLayoutFlagsStore } from '../../stores/layout-flags';
 import { storeToRefs } from 'pinia';
+import TheVideo from './components/TheVideo.vue';
 const { isHeaderOnPortfolioDownloaded, isAboutMeDownloaded } = storeToRefs(
     useLayoutFlagsStore()
 );
@@ -374,5 +377,10 @@ const { isHeaderOnPortfolioDownloaded, isAboutMeDownloaded } = storeToRefs(
     width: min(get-vw(580px), 580px);
     padding-top: min(get-vw(40px), 40px);
     min-height: min(get-vw(395px), 395px);
+}
+
+.po-carousel::v-deep {
+    width: min(get-vw(920px), 920px);
+    height: min(get-vw(614px), 614px);
 }
 </style>

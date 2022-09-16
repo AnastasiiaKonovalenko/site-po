@@ -119,7 +119,11 @@ body,
     background: #e46653;
 }
 
-.section-video,
+.section-video {
+    width: 100%;
+    height: fit-content;
+}
+
 .po-carousel {
     width: min(get-vw(560px), 560px);
     height: min(get-vw(315px), 315px);

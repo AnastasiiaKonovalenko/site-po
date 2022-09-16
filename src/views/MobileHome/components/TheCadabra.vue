@@ -46,6 +46,14 @@
                     promise to show it here later, when there is permission from
                     the copyright holders.
                 </p>
+
+                <h4 class="project-subheader-2 mt-5">Application map</h4>
+                <div class="d-flex">
+                    <TheProjectImage
+                        src="Map_Kadabra.jpg"
+                        :aspect-ratio="1.32"
+                    />
+                </div>
             </div>
 
             <div class="d-flex justify-center mt-11">

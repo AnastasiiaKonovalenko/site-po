@@ -45,6 +45,18 @@
                     the copyright holders.
                 </p>
             </div>
+
+            <h4 class="po-pizza-section-img-subheader mt-custom-20 mb-custom-4">
+                Application map
+            </h4>
+            <div class="po-pizza-section-wrap">
+                <img
+                    src="../../assets/Map_Kadabra.jpg"
+                    class="po-pizza-section-img"
+                    :class="{ 'po-pizza-section-img-full': true }"
+                    alt="pizza-app"
+                />
+            </div>
         </div>
 
         <div class="po-pizza-section position-relative">
