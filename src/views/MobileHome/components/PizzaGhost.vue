@@ -183,7 +183,7 @@
                         <a
                             class="project-link"
                             target="_blank"
-                            href="https://www.figma.com/proto/b3faQ9asyb9JvSEOyuvT1k/Pizza-Ghost-app?node-id=121%3A924&scaling=scale-down&page-id=0%3A1&starting-point-node-id=10%3A38"
+                            href="https://www.figma.com/file/b3faQ9asyb9JvSEOyuvT1k/Pizza-Ghost-app?node-id=0%3A1"
                         >
                             You can evaluate the work of the prototype at this
                             link
