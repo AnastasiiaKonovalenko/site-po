@@ -23,9 +23,9 @@
                 looking forward to bring a valuable skillset into my new
                 position! Expect 20 years of experience in corporate publishing,
                 graphic and advertising design; expect Art-Directorial expertise
-                of large publishing houses in 2 countries; expect
-                communicational capabilities in cooperation with hundreds of
-                clients from over 10 countries around the World.
+                of large printing houses in 2 countries; expect communication
+                capabilities in cooperation with hundreds of clients from over
+                10 countries around the World.
             </p>
 
             <p class="po-about-me-bold mb-custom-11">
@@ -66,7 +66,6 @@ import { storeToRefs } from 'pinia';
 const { isHeaderOnPortfolioDownloaded, isAboutMeDownloaded } = storeToRefs(
     useLayoutFlagsStore()
 );
-
 </script>
 
 <style lang="scss" scoped>

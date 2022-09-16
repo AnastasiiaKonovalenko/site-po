@@ -40,53 +40,70 @@
                 further into the digital world by reinventing myself as a UI/UX
                 Designer, looking to fill a position of a Junior UI/UX Designer.
             </p>
-            <p class="mb-4">
-                After over 20 years in the polygraphy, I’m looking forward to
-                bring a valuable skillset into my new position! Expect 20 years
-                of experience in corporate publishing, graphic and advertising
-                design; expect Art-Directorial expertise of large publishing
-                houses in 2 countries; expect communicational capabilities in
-                cooperation with hundreds of clients from over 10 countries
-                around the World.
-            </p>
 
-            <p class="po-about-me-bold mb-4">
-                I’m happy to bring to the table:
-            </p>
+            <div v-if="isVisible">
+                <p class="mb-4">
+                    After over 20 years in the polygraphy, I’m looking forward
+                    to bring a valuable skillset into my new position! Expect 20
+                    years of experience in corporate publishing, graphic and
+                    advertising design; expect Art-Directorial expertise of
+                    large printing houses in 2 countries; expect communication
+                    communication capabilities in cooperation with hundreds of
+                    clients from over 10 countries around the World.
+                </p>
 
-            <p class="mb-4">
-                - Mastery in challenges of a commercial business, due to my
-                background as a small business owner;
-            </p>
-            <p class="mb-4">
-                - Ability to understand & solve marketing challenges due to
-                close contact with marketing managers In the line of duty;
-            </p>
-            <p class="mb-4">
-                - Virtuosity in balancing client’s emotions due to the interest
-                & research of psychology & sociology;
-            </p>
-            <p class="mb-4">
-                It would be my pleasure to exploring depth of UI/UX Design, add
-                to your company team a perfect balance of experience,
-                progressive consciousness and passion when growing to be a
-                valuable part of the company’s development!
-            </p>
-            <p class="mb-4">
-                As the next career step I look forward to develop new skills in
-                the field including animation, 3D graphics and Augmented Reality
-                to elevate the range of services provided and cover larger share
-                of the market needs.
-            </p>
+                <p class="po-about-me-bold mb-4">
+                    I’m happy to bring to the table:
+                </p>
+
+                <p class="mb-4">
+                    - Mastery in challenges of a commercial business, due to my
+                    background as a small business owner;
+                </p>
+                <p class="mb-4">
+                    - Ability to understand & solve marketing challenges due to
+                    close contact with marketing managers In the line of duty;
+                </p>
+                <p class="mb-4">
+                    - Virtuosity in balancing client’s emotions due to the
+                    interest & research of psychology & sociology;
+                </p>
+                <p class="mb-4">
+                    It would be my pleasure to exploring depth of UI/UX Design,
+                    add to your company team a perfect balance of experience,
+                    progressive consciousness and passion when growing to be a
+                    valuable part of the company’s development!
+                </p>
+                <p class="mb-4">
+                    As the next career step I look forward to develop new skills
+                    in the field including animation, 3D graphics and Augmented
+                    Reality to elevate the range of services provided and cover
+                    larger share of the market needs.
+                </p>
+            </div>
+        </div>
+        <div
+            @click="toggleIsVisible"
+            class="mx-11 link-see-more position-relative d-inline"
+        >
+            {{ textTruncate }}
         </div>
     </div>
 </template>
 
 <script setup>
+import { computed, ref } from 'vue';
 import TheProjectPreview from './components/TheProjectPreview.vue';
 
 function goTo(id) {
     document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+}
+const isVisible = ref(false);
+const textTruncate = computed(() =>
+    !isVisible.value ? 'See more...' : 'See less...'
+);
+function toggleIsVisible() {
+    isVisible.value = !isVisible.value;
 }
 </script>
 
@@ -114,4 +131,18 @@ function goTo(id) {
         font-size: 20px;
     }
 }
+
+.link-see-more {
+    padding-bottom: 2px;
+    &:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background-color: black;
+    }
+}
+
 </style>
