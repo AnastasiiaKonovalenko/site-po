@@ -49,9 +49,11 @@
                     </p>
 
                     <div class="d-flex mt-3">
-                        <TheProjectImage
-                            src="cheese_hero-1.jpg"
-                            :aspect-ratio="1.32"
+                        <TheVideo
+                            class="my-3"
+                            :index="0"
+                            folder="pizza_presentation"
+                            :photosCount="3"
                         />
                     </div>
                     <h3 class="project-subheader">Ideation</h3>
@@ -216,7 +218,7 @@
 
 <script setup>
 import { computed, ref } from 'vue';
-
+import TheVideo from './TheVideo.vue';
 const isVisible = ref(false);
 const textTruncate = computed(() =>
     !isVisible.value ? 'See more...' : 'See less...'
@@ -307,5 +309,9 @@ import TheProjectImage from './TheProjectImage.vue';
         height: 1px;
         background-color: black;
     }
+}
+
+.po-carousel::v-deep {
+    aspect-ratio: 1.32;
 }
 </style>
