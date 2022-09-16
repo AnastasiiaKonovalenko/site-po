@@ -1,8 +1,6 @@
 <template>
     <ul class="d-flex">
-        <li
-            class="contacts-icon d-flex justify-center align-center rounded-circle"
-        >
+        <li class="contacts-icon d-flex align-stretch rounded-circle">
             <a
                 class="d-flex justify-center align-center flex-grow-1 z-index-1"
                 target="_blank"
@@ -11,7 +9,7 @@
                 <TheMail class="z-index-1" />
             </a>
         </li>
-        <li class="contacts-icon ml-4 rounded-circle">
+        <li class="contacts-icon d-flex align-stretch ml-4 rounded-circle">
             <a
                 class="d-flex justify-center align-center flex-grow-1 z-index-1"
                 target="_blank"
@@ -20,7 +18,7 @@
                 <TheWatsapp class="z-index-1" />
             </a>
         </li>
-        <li class="contacts-icon ml-4 rounded-circle">
+        <li class="contacts-icon d-flex align-stretch ml-4 rounded-circle">
             <a
                 class="d-flex justify-center align-center flex-grow-1 z-index-1"
                 target="_blank"
@@ -29,7 +27,7 @@
                 <TheLinkedin class="z-index-1" />
             </a>
         </li>
-        <li class="contacts-icon ml-4 rounded-circle">
+        <li class="contacts-icon d-flex align-stretch ml-4 rounded-circle">
             <a
                 class="d-flex justify-center align-center flex-grow-1 z-index-1"
                 target="_blank"
@@ -51,7 +49,6 @@ import TheWatsapp from '../../components/icons/TheWatsapp.vue';
 <style scoped>
 .contacts-icon {
     background-color: black;
-    padding: 8px;
     width: 40px;
     height: 40px;
 }

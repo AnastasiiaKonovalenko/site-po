@@ -48,7 +48,7 @@
                 @click="toggleMobileMenu"
                 icon elevation="0" class="bg-transparent">
                 <VerticalDots v-if="!isMobileMenuVisible" class="z-index-1" />
-                <CloseIcon v-else class="z-index-1"/>
+                <CloseIcon v-else class="z-index-1" />
             </v-btn>
             <span class="po-mobile-header-bottom-subtext">
                 based in Vilnius, Lithuania

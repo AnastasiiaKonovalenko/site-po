@@ -1,26 +1,34 @@
 <template>
     <div>
-        <h2 class="po-about-me-header pb-8 py-4 mx-2">Welcome to my portfolio</h2>
+        <h2 class="po-about-me-header pb-8 py-4 mx-2">
+            Welcome to my portfolio
+        </h2>
         <div>
             <TheProjectPreview
+                @click="goTo('pizza-ghost')"
                 class="mb-2"
                 img-src="pizza_broshur.jpg"
                 header="Pizza Ghost project"
                 text="Application for ordering customized pizza + Brochure"
             />
             <TheProjectPreview
+                @click="goTo('cadabra')"
                 class="mb-2"
                 img-src="kadabra_broshur_22.jpg"
                 header="Kadabra project"
                 text="Marketing Agency Website Concept + Brand Identity & Logo Book"
             />
             <TheProjectPreview
+                @click="goTo('logos')"
                 img-src="jaro_2.jpg"
                 header="Logos, Identity, mltipage layout samples"
             />
         </div>
 
-        <div id="about-me" class="po-about-me-section flex-grow-1 mx-11 mt-11 pt-2">
+        <div
+            id="about-me"
+            class="po-about-me-section flex-grow-1 mx-11 mt-11 pt-2"
+        >
             <p class="po-about-me-bold mb-4">My name is Olga,</p>
 
             <p class="mb-4">
@@ -28,19 +36,18 @@
                 Lithuania.
             </p>
             <p class="mb-4">
-                After achieving all set goals in graphic design, I’m
-                now growing further into the digital world by reinventing myself
-                as a UI/UX Designer, looking to fill a position of a Junior
-                UI/UX Designer.
+                After achieving all set goals in graphic design, I’m now growing
+                further into the digital world by reinventing myself as a UI/UX
+                Designer, looking to fill a position of a Junior UI/UX Designer.
             </p>
             <p class="mb-4">
-                 After over 20 years in the polygraphy, I’m
-                looking forward to bring a valuable skillset into my new
-                position! Expect 20 years of experience in corporate publishing,
-                graphic and advertising design; expect Art-Directorial expertise
-                of large publishing houses in 2 countries; expect
-                communicational capabilities in cooperation with hundreds of
-                clients from over 10 countries around the World.
+                After over 20 years in the polygraphy, I’m looking forward to
+                bring a valuable skillset into my new position! Expect 20 years
+                of experience in corporate publishing, graphic and advertising
+                design; expect Art-Directorial expertise of large publishing
+                houses in 2 countries; expect communicational capabilities in
+                cooperation with hundreds of clients from over 10 countries
+                around the World.
             </p>
 
             <p class="po-about-me-bold mb-4">
@@ -77,6 +84,10 @@
 
 <script setup>
 import TheProjectPreview from './components/TheProjectPreview.vue';
+
+function goTo(id) {
+    document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+}
 </script>
 
 <style lang="scss" scoped>

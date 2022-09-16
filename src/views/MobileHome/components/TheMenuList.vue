@@ -25,28 +25,29 @@
                 >
                     {{ item.title }}
                 </span>
-                <TheContactsMenu
-                    class="ml-4"
-                    v-if="
-                        isContactsVisible &&
-                        isMobileMenuVisible &&
-                        idx === menuItems.length - 1
-                    "
-                />
+
+                <Transition name="slide-fade">
+                    <TheContactsMenu
+                        class="ml-4"
+                        v-if="
+                            isContactsVisible &&
+                            isMobileMenuVisible &&
+                            idx === menuItems.length - 1
+                        "
+                    />
+                </Transition>
             </li>
         </ul>
     </div>
 </template>
 
 <script setup>
-    import { computed, ref } from 'vue';
+import { computed, ref, watch } from 'vue';
 import TheContactsMenu from './TheContactsMenu.vue';
-
-defineProps({
-    isMobileMenuVisible: Boolean,
-});
-
-const isContactsVisible  = ref(false)
+import { storeToRefs } from 'pinia';
+import { useLayoutFlagsStore } from '../../../stores/layout-flags';
+const { isMobileMenuVisible } = storeToRefs(useLayoutFlagsStore());
+const isContactsVisible = ref(false);
 const menuItems = [
     {
         title: 'About me',
@@ -74,20 +75,24 @@ const menuItems = [
         id: 'contacts',
     },
 ];
-const cvLink = computed(() => {
-    return new URL(`../../../assets/cv/CV_OK.pdf`, import.meta.url).href;
-});
-
+const cvLink = computed(
+    () => new URL(`../../../assets/cv/CV_OK.pdf`, import.meta.url).href
+);
 const goToPage = (id) => {
-    if (id === 'cv') {
-        return;
-    } else if (id === 'contacts') {
-        isContactsVisible.value = !isContactsVisible.value;
-    } else {
-        const el = document.getElementById(id);
-        el.scrollIntoView({ behavior: 'smooth' });
+    if (id !== 'cv') {
+        id === 'contacts'
+            ? (isContactsVisible.value = !isContactsVisible.value)
+            : document
+                  .getElementById(id)
+                  .scrollIntoView({ behavior: 'smooth' });
     }
 };
+
+watch(isMobileMenuVisible, (newValue) => {
+    if (!newValue) {
+        isContactsVisible.value = false;
+    }
+});
 </script>
 
 <style lang="scss" scoped>
@@ -127,5 +132,19 @@ a {
 
 .z-index-1 {
     z-index: 1;
+}
+
+.slide-fade-enter-active {
+    transition: all 0.3s ease-out;
+}
+
+.slide-fade-leave-active {
+    transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+    transform: translateX(20px);
+    opacity: 0;
 }
 </style>
