@@ -47,7 +47,7 @@
             </div>
 
             <h4 class="po-pizza-section-img-subheader mt-custom-20 mb-custom-4">
-                Application map
+                Site map
             </h4>
             <div class="po-pizza-section-wrap">
                 <img

@@ -1,8 +1,12 @@
 <template>
-    <div class="po-carousel position-relative" data-ride="carousel">
-
+    <div
+        :style="{ aspectRatio: aspectRatio }"
+        class="po-carousel position-relative"
+        data-ride="carousel"
+    >
         <img
             v-for="(item, idx) in photosCount"
+            :style="{ aspectRatio: aspectRatio }"
             :key="item"
             :class="{ 'section-video-active': idx === currentSlide }"
             class="section-video position-absolute"
@@ -28,6 +32,10 @@ export default {
             type: Number,
             required: true,
         },
+        aspectRatio: {
+            type: Number,
+            default: 1.55
+        }
     },
 
     data() {
@@ -123,7 +131,6 @@ body,
 .section-video,
 .po-carousel {
     width: 100%;
-    aspect-ratio: 1.55;
 }
 
 .section-video {

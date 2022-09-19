@@ -50,6 +50,7 @@
 
                     <div class="d-flex mt-3">
                         <TheVideo
+                            :aspect-ratio="1.32"
                             class="my-3"
                             :index="0"
                             folder="pizza_presentation"
@@ -309,9 +310,5 @@ import TheProjectImage from './TheProjectImage.vue';
         height: 1px;
         background-color: black;
     }
-}
-
-.po-carousel::v-deep {
-    aspect-ratio: 1.32;
 }
 </style>

@@ -17,15 +17,25 @@
             <p class="mb-custom-11">
                 I’m from Kyiv, Ukraine, however currently am located in Vilnius,
                 Lithuania. After achieving all set goals in graphic design, I’m
-                now growing further into the digital world by reinventing myself
-                as a UI/UX Designer, looking to fill a position of a Junior
-                UI/UX Designer. After over 20 years in the polygraphy, I’m
-                looking forward to bring a valuable skillset into my new
-                position! Expect 20 years of experience in corporate publishing,
-                graphic and advertising design; expect Art-Directorial expertise
-                of large printing houses in 2 countries; expect communication
-                capabilities in cooperation with hundreds of clients from over
-                10 countries around the World.
+                now growing further into the IT world by reinventing myself as a
+                UI/UX Designer, looking to fill a position of a Junior UI/UX
+                Designer. After over 20 years in the polygraphy, I’m looking
+                forward to bring a valuable skillset into my new position!
+            </p>
+
+            <p class="mb-custom-11">
+                Expect 20 years of experience in corporate publishing, graphic
+                and advertising design;
+            </p>
+
+            <p class="mb-custom-11">
+                expect Art-Directorial expertise of large printing houses in 2
+                countries;
+            </p>
+
+            <p class="mb-custom-11">
+                expect communication capabilities in cooperation with hundreds
+                of clients from over 10 countries around the World.
             </p>
 
             <p class="po-about-me-bold mb-custom-11">

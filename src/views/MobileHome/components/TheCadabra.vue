@@ -47,7 +47,7 @@
                     the copyright holders.
                 </p>
 
-                <h4 class="project-subheader-2 mt-5">Application map</h4>
+                <h4 class="project-subheader-2 mt-5">Site map</h4>
                 <div class="d-flex">
                     <TheProjectImage
                         src="Map_Kadabra.jpg"
